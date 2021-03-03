@@ -1,0 +1,584 @@
+/*!
+ * WPL Property Manager Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.pmanager-wp {
+
+  header {
+    overflow: hidden;
+    h2 {
+      border: none !important;
+      float: left;
+    }
+    .wpl-button.button-1{
+      position: relative !important;
+      float: right;
+      margin-left: 10px;
+      border-radius: 4px;
+      border: 2px solid $secondary-color !important;
+      background: transparent !important;
+      color: $secondary-color !important;
+      height: 35px;
+      top: auto;
+      font: {
+        size: 16px;
+        family: $font-karla;
+        weight: 600;
+      }
+      &:before{
+        color: $secondary-color;
+      }
+      &[data-realtyna-href="#wpl_listing_stats_div"]{
+        background: $co-2 !important;
+        color: $co-14 !important;
+        border: none !important;
+        &:before{
+          color: $co-14;
+        }
+      }
+    }
+  }
+
+  #wpl_listings_top_tabs_container{
+    @include for-tablet{
+      margin-top: 10px;
+    }
+    .wpl-tabs{
+      li{
+        @include for-tablet{
+          float: none;
+          border-bottom: 2px solid $main-color;
+          margin: 0;
+        }
+        a{
+          text-transform: uppercase;
+          font: {
+            size: 18px;
+            family: $font-montserrat;
+          }
+        }
+        &.wpl-selected-tab{
+          a{
+            background: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .pmanager-cnt{
+    border: 2px solid darken($co-1,5%);
+  }
+
+  #wpl_listing_manager_search_form_cnt{
+    @include calc(width, "100% - 110px");
+    display: inline-block;
+    padding: 5px 5px 0 5px;
+    @include for-tablet{
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .lm-search-form-wp{
+    position: relative;
+    border: none;
+    border-bottom: 2px solid $co-13;
+    padding: 5px 0;
+    margin-bottom: 0;
+    h3{
+      font:{
+        size: 16px !important;
+        family: $font-montserrat;
+        weight: bold;
+      }
+      display: inline-block;
+      text-transform: uppercase;
+      padding: 15px 0 15px 15px;
+      vertical-align: top;
+      color: $co-14;
+      &:before{
+        display: none !important;
+      }
+    }
+    .pwizard-section .prow{
+      padding-right: 50px;
+      @include for-tablet{
+        padding-right: 0;
+      }
+      .wpl_listing_manager_search_form_element_cnt{
+        min-width: 126px;
+        margin-bottom: 5px;
+        @include for-tablet{
+          width: 48%;
+          margin-left: 5px;
+        }
+        @include for-phone{
+          width: 100%;
+          margin-left: 0;
+        }
+        .chosen-single,select,input[type="text"]{
+          width: 100%;
+          border-radius: 4px;
+          border: 1px solid lighten($co-13,1%);
+          color: $text-color2;
+          height: 30px;
+          font: {
+            size: 13px;
+            family: $font-montserrat;
+          }
+        }
+        input[type="text"]{
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  .wpl-btn-wp{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px !important;
+    @include for-tablet{
+      position: static;
+      margin-left: 10px;
+    }
+    .wpl_reset_button{
+      display: none;
+    }
+    .wpl-button.button-1{
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      text-indent: -9999px;
+      border-radius: 4px;
+      background: $secondary-color;
+      &:before{
+        content: '\e91b';
+        font: {
+          family: $font-wpl;
+          size: 20px;
+          weight: normal;
+        }
+        right: 0;
+        top: 0;
+        z-index: 1;
+        line-height: 30px;
+        color: $co-1;
+        position: absolute;
+        width: 30px;
+        text-indent: 0;
+      }
+      &:hover{
+        @include box-shadow(inset 2px 2px 9px rgba($co-0,.3));
+        background: $secondary-color;
+      }
+    }
+  }
+
+  .mass-panel-wp{
+    border: none;
+    background: darken($co-1,5%);
+    padding: 0;
+    h3{
+      display: none;
+    }
+    .mass-actions-wp{
+      float: left;
+      padding: 10px 0 10px 10px;
+      @include for-tablet{
+        float: none;
+        overflow: hidden;
+        padding: 10px;
+      }
+      .group-btn{
+        background: $co-1;
+        border-radius: 4px;
+        margin: 5px 15px 0 0;
+        border: 1px solid $co-13;
+        @include for-tablet{
+          float: none;
+          border: none;
+          margin: 0;
+        }
+        .mass-btn{
+          margin: 0;
+          border: none;
+          border-right: 1px solid $co-13;
+          @include for-tablet{
+            height: 35px;
+            background: white;
+            border: 1px solid $co-13;
+            min-width: 120px;
+            width: 33%;
+          }
+          @include for-phone{
+            width: 50%;
+          }
+          &:hover{
+            @include transition(350ms, all);
+            background: $co-13;
+            span {
+              color: $co-1;
+            }
+            i:before{
+              color: $co-1;
+            }
+          }
+          &:last-child{
+            border: none;
+            @include for-tablet{
+              border: 1px solid $co-13;
+            }
+          }
+          i{
+            font-style: normal;
+            color: $co-6;
+            &:before{
+              top: 3px;
+              right: 8px;
+              font-size: 1.2em;
+              line-height: 100%;
+              position: absolute;
+            }
+            &:after{
+              font-size: 16px;
+              top: 3px;
+              right: 8px;
+              @include for-tablet{
+                top: 10px;
+              }
+            }
+            &.icon-unselect:after{
+              content: '\e91d';
+              font-size: 13px;
+              top: 5px;
+            }
+            &.icon-select:after{
+              content: '\e916';
+            }
+            &.icon-confirm:after{
+              content: '\e02a';
+            }
+            &.icon-unconfirm:after{
+              content: $re-icon-ban;
+              font-family: $font-sesame;
+            }
+            &.icon-restore {
+              &:before{
+                display: none;
+              }
+              &:after {
+                content: $re-icon-refresh;
+                font-family: $font-sesame;
+              }
+            }
+            &.icon-trash{
+              &:after{
+                content: $re-icon-trash-o;
+                font-family: $font-sesame;
+              }
+            }
+          }
+          &.icon-restore:before{
+            display: none;
+          }
+          span{
+            color: $text-color2;
+            line-height: 22px;
+            font: {
+              family: $font-montserrat;
+              size: 13px;
+            }
+            @include for-tablet{
+              line-height: 35px;
+            }
+          }
+        }
+      }
+    }
+    .change-user-cnt-wp{
+      float: right;
+      border: none;
+      width: auto;
+      margin: 0;
+      padding: 10px 10px 10px 0;
+      .chosen-container,select,.chosen-single{
+        width: auto !important;
+        border-radius: 4px;
+      }
+      label{
+        color: $co-8;
+        width: auto;
+        padding: 0;
+        font: {
+          family: $font-montserrat;
+          size: 13px;
+          weight: normal;
+        }
+      }
+    }
+    & + .pagination-wp{
+      display: none;
+    }
+
+    .change-multi-agent-cnt-wp{
+      float: left;
+      padding: 0 10px 10px;
+      font-family: $font-montserrat;
+      font-size: 13px;
+      ul{
+        border-radius: 4px;
+        .search-field input[type="text"]{
+          height: 30px;
+        }
+      }
+      .wpl-button{
+        padding: 6px 16px;
+        height: auto;
+        border-radius: 4px;
+        text-transform: uppercase;
+        background: $main-color;
+        font:{
+          family: $font-karla;
+          size: 14px;
+          weight: 500;
+        }
+        &:hover{
+          background: lighten($main-color,10%);
+        }
+      }
+    }
+  }
+
+  .properties-wp {
+    .propery-wp {
+      @include calc(width, "100% - 50px");
+      padding-bottom: 0;
+      min-height: 140px;
+      border-width: 2px;
+      margin: 20px 25px;
+      .checkbox-wp {
+        left: auto;
+        right: 14px;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        background: darken($co-1,5%);
+        border-radius: 4px;
+        top: 7px;
+        @include for-tablet{
+          bottom: 23px;
+          top: auto;
+          right: 132px;
+        }
+        @include for-phone{
+          bottom: 8px;
+        }
+        &:before {
+          display: none;
+        }
+
+        input{
+          top: 3px;
+          left: 4px;
+        }
+      }
+      .property-image{
+        width: 200px;
+        height: 100%;
+        position: relative;
+        margin: -1px;
+        @include for-tablet{
+          margin:0 auto;
+          float: none;
+        }
+        @include for-phone{
+          width: 100%;
+          height: auto;
+        }
+        a{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          top: 0;
+          background: rgba($text-color2,.5);
+          border: none;
+          text-decoration: none;
+          color: $co-1 !important;
+          line-height: 140px;
+          &:hover{
+            text-decoration: none;
+            background: rgba($text-color2,.5);
+          }
+        }
+        &:hover{
+          @include transition(350ms, all);
+          a{
+            opacity: 1;
+          }
+        }
+      }
+      .info-action-wp{
+        @include calc(width, "100% - 200px");
+        @include for-tablet{
+          width: 100%;
+        }
+        .property-detailes{
+          @include calc(width, "100% - 60px");
+          float: left;
+          padding: 10px 15px 0 15px;
+          display: flex;
+          flex-flow: column wrap;
+          @include for-tablet{
+            width: 100%;
+          }
+          .p-location{
+            order: 1;
+            color: $co-8;
+            font: {
+              family: $font-montserrat;
+              size: 18px;
+              weight: bold;
+            }
+          }
+          .p-title{
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+            order: 2;
+            font: {
+              family: $font-montserrat;
+              size: 12px;
+            }
+            &:hover{
+              text-decoration: none;
+            }
+            span{
+              color: rgba($co-0,.5);
+            }
+          }
+        }
+        .p-types{
+          order: 3;
+          position: relative;
+          padding-bottom: 27px;
+        }
+        .plist_price{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          color: $main-color !important;
+          font: {
+            family: $font-montserrat;
+            size: 18px;
+            weight: bold;
+          }
+        }
+        .p-add-date{
+          order: 4;
+          border: none;
+          padding-top: 10px;
+          .value{
+            color: $secondary-color !important;
+          }
+        }
+      }
+
+      .property-actions{
+        width: 60px;
+        float: right;
+        height: auto;
+        position: static;
+        padding-top:3px;
+        padding-right: 10px;
+        @include for-tablet{
+          width: 100%;
+        }
+        i{
+          vertical-align: middle;
+          font-size: 16px;
+          color: $text-color1;
+        }
+        .pmanager_actions{
+          padding-top: 25px;
+          border-left: 1px solid;
+          @include for-tablet{
+            border: none;
+          }
+          .icon-edit{
+            &:before{
+              content: "\e697";
+              font-size: 13px;
+            }
+          }
+          .icon-trash{
+            &:after{
+              content: $re-icon-trash-o;
+              font-family: $font-sesame;
+            }
+          }
+          .icon-confirm:after{
+            content: '\e90b';
+          }
+          a{
+            color: $text-color1;
+          }
+          .p-action-btn{
+            margin: 2px;
+            background: darken($co-1,5%);
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            border-radius: 4px;
+          }
+        }
+      }
+
+      .finilize-msg{
+        position: absolute;
+        float: left;
+        bottom: 0;
+        left: 0;
+        @include for-tablet{
+          position: relative;
+          order: 5;
+        }
+        span{
+          padding-left: 8px;
+        }
+        &:after{
+          left: 0;
+        }
+      }
+      .change-user-cnt-wp{
+        position: absolute;
+        bottom: 9px;
+        right: 60px;
+        width: auto;
+        @include for-tablet{
+          position: static;
+        }
+        @include for-phone{
+          float: none;
+          display: block;
+        }
+      }
+      .pmanager-multi-agent{
+        position: absolute;
+        bottom: 50px;
+        right: 60px;
+        width: auto;
+        @include for-tablet{
+          position: static;
+          width: 100%;
+          float: left;
+        }
+      }
+    }
+  }
+
+}/*End property manager*/

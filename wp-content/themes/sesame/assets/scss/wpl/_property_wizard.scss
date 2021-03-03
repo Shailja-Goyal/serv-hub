@@ -1,0 +1,1400 @@
+/*!
+ * WPL Property Wizard Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.pwizard-wp,.pmanager-wp{
+  header h2{
+    color: $main-color;
+    text-transform: uppercase;
+    border: none;
+    font: {
+      family: $font-montserrat;
+      size: 26px;
+      weight: bold;
+    }
+  }
+}
+.wpl_view_container{
+  @include for-all-non-desktop-devices{
+    padding: 0 15px;
+  }
+}
+
+.pwizard-wp.wpl_view_container{
+  position: relative;
+  overflow: hidden;
+
+    header {
+      @include for-tablet{
+        display: block;
+      }
+      h2 {
+        @include for-tablet-land {
+          padding-bottom: 35px;
+        }
+        @include for-tablet {
+          padding-bottom: 0;
+        }
+        @include for-phone {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .finilize-message {
+      height: 30px;
+      width: auto;
+      display: inline-block;
+      border: 0;
+      position: absolute;
+      top: 0;
+      left: 300px;
+      @include for-tablet-land{
+        margin-bottom: 35px;
+      }
+      @include for-tablet{
+        margin-bottom: 45px;
+        margin-top: 0;
+        position: static;
+      }
+      span {
+        vertical-align: bottom;
+        font:{
+          size: 15px;
+        }
+      }
+    }
+
+    /*Horizontal*/
+  &.wpl-pwizard-horizontal {
+    .sidebar-wp {
+      border: 2px solid darken($co-1, 5%); /*#f2f2f2*/
+      position: relative;
+
+      .wpl-pwizard-btns {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+
+        li:first-child {
+          height: 50px;
+          width: 35px;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          margin: 0;
+          padding: 0;
+        }
+        li:nth-child(2) {
+          height: 50px;
+          width: 35px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          margin: 0;
+          padding: 0;
+        }
+
+        .wpl-pwizard-prev, .wpl-pwizard-next {
+          padding: 0;
+          height: 100%;
+          background: transparent;
+          z-index: 3;
+          font-size: 0;
+          span {
+            font-size: 26px;
+            color: $co-3;
+            &:before {
+              vertical-align: sub;
+            }
+          }
+          &:hover span {
+            color: $co-11;
+          }
+
+        }
+        .wpl-pwizard-prev {
+          span {
+            left: 4px;
+            &:before {
+              content: '\e656';
+            }
+          }
+        }
+        .wpl-pwizard-next {
+          span {
+            right: 4px;
+            &:before {
+              content: '\e657';
+            }
+          }
+        }
+      }
+      /*Tabs*/
+      .side-tabs-wp {
+        position: relative;
+        margin: 0 !important;
+        z-index: 3;
+
+        ul:first-child {
+          margin: 0;
+          padding: 0 35px;
+          li {
+            width: 33.3%;
+            margin: 0;
+            a {
+              height: 50px;
+              background: transparent;
+              color: $co-6 !important;
+              border: none;
+              border-right: 1px solid $co-2;
+              border-left: 1px solid $co-2;
+              border-bottom: 2px solid $co-2;
+              padding: 7px 0 7px 20px;
+              font: {
+                size: 17px;
+                family: $font-montserrat;
+              }
+              @include for-tablet-land {
+                font-size: 13px;
+              }
+              @include for-tablet {
+                font-size: 0;
+                text-align: center;
+                padding-left: 0;
+              }
+              &:hover {
+                text-decoration: none;
+              }
+            }
+            .wpl-pwizard-tab-number {
+              color: $co-6;
+              font-size: 16px;
+              border: 2px solid $co-6;
+              position: static;
+              display: inline-block;
+              width: 28px;
+              height: 28px;
+              line-height: 24px;
+            }
+            &.valid {
+              a {
+                color: $co-9 !important;
+                border: none;
+                border-bottom: 2px solid $co-9;
+                border-right: 1px solid $co-2;
+                border-left: 1px solid $co-2;
+              }
+              .wpl-pwizard-tab-number {
+                color: transparent;
+                border-color: $co-9;
+                position: relative;
+                top: 0;
+                margin-right: 5px;
+                &:after {
+                  color: $co-9;
+                  content: "\e02a";
+                  font-family: $font-wpl;
+                  font-weight: 400;
+                  position: absolute;
+                  left: 5px;
+                }
+              }
+            }
+            &.active {
+              a {
+                background: transparent;
+                color: $co-8 !important;
+                border: none;
+                border-bottom: 2px solid $co-11;
+                border-right: 1px solid $co-2;
+                border-left: 1px solid $co-2;
+                &:after {
+                  @include calc(left, "50% - 5px");
+                  content: "\e929";
+                  font-family: $font-wpl;
+                  position: absolute;
+                  bottom: -14px;
+                  color: $co-11;
+                  font-size: 17px;
+                }
+              }
+              .wpl-pwizard-tab-number {
+                color: $co-8;
+                border-color: $co-8;
+                &:after {
+                  display: none;
+                }
+              }
+            }
+            &:last-child a {
+              border-right: none;
+            }
+          }
+        }
+      }
+      .wpl-listing-discard-btn a i{
+        top: auto;
+      }
+      /*End Tabs*/
+    }
+  }
+
+
+      /*Content*/
+      .side-content-wp {
+        background: $co-1;
+        margin-top: -2px;
+        border: none;
+        border-top: 2px solid $co-2;
+        padding: 0 50px !important;
+        @include for-tablet {
+          padding: 0 20px !important;
+        }
+        .pwizard-section {
+          margin: 0 -20px;
+        }
+
+        .prow {
+          padding: 15px 20px;
+          width: 33.3% !important;
+          position: relative;
+          @include for-tablet {
+            width: 100% !important;
+          }
+          * {
+            vertical-align: bottom;
+          }
+          label {
+            color: $co-8;
+            display: block;
+            text-align: left;
+            width: auto;
+            line-height: 29px;
+            font: {
+              family: $font-montserrat;
+              size: 14px;
+              weight: 700;
+            }
+          }
+          input[type="text"], select, .chosen-single, textarea, input[type="number"] {
+            border: 1px solid rgba($co-0,.1);
+            border-bottom: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 0 rgba($co-0,.1);
+            height: 40px;
+            width: 100%;
+            padding-left: 15px;
+            color: $text-color1;
+            font: {
+              size: 15px;
+              family: $font-montserrat;
+            }
+          }
+          .chosen-container {
+            width: 100% !important;
+          }
+          .chosen-single {
+            span {
+              line-height: 40px;
+              margin-right: 41px;
+            }
+            div {
+              right: 15px;
+              b {
+                background: none;
+                &:after {
+                  content: "\e68c";
+                  color: $co-5;
+                  line-height: 40px;
+                  font: {
+                    family: $font-wpl;
+                    size: 14px;
+                  }
+                }
+              }
+            }
+          }
+          .chosen-container-active.chosen-with-drop .chosen-single div b {
+            &:after {
+              content: "\e699";
+            }
+          }
+          textarea {
+            min-height: 50px;
+            width: 100%;
+          }
+          .wpl_c_field_313, .wpl_c_field_312 {
+            width: calc(100% - 25px);
+          }
+          .wpl_c_field_312 {
+            float: right;
+          }
+          &.prow-separator {
+            width: 100% !important;
+          }
+          &.prow-price, &.prow-area {
+            input {
+              width: 65%;
+              margin-right: 10px;
+              @include for-tablet-land {
+                width: 58%;
+                margin-right: 5px;
+              }
+            }
+            .chosen-container, select {
+              width: calc(34% - 10px) !important;
+              min-width: 50px;
+              float: right;
+            }
+          }
+
+        }
+
+        .wpl_listing_saved_span,.ajax-inline-save{
+          position: absolute;
+          top: 0;
+          right: 20px;
+        }
+
+        .prow-property_types,.prow-listings {
+          .chosen-container .chosen-single {
+            padding-left: 40px;
+            &:before {
+              left: 8px;
+              position: absolute;
+              top: 3px;
+              color: $co-6;
+              font: {
+                family: $font-wpl;
+                size: 24px;
+              }
+            }
+          }
+        }
+        .prow-property_types {
+          width: 66.6% !important;
+          @include for-tablet{
+            width: 100% !important;
+          }
+          .chosen-container .chosen-single:before {
+            content: '\e649';
+          }
+          & > div {
+            width: 49.5%;
+            display: inline-block;
+            @include for-phone{
+              width: 100%;
+            }
+            &:first-child {
+              padding-right: 20px;
+              @include for-phone{
+                padding-right: 0;
+                padding-bottom: 30px;
+              }
+            }
+            &:nth-child(2){
+              padding-left: 20px;
+              @include for-phone{
+                padding-left: 0;
+              }
+            }
+          }
+        }
+        .prow-listings {
+          .chosen-container .chosen-single:before {
+            content: '\e918';
+            font-family: $font-sesame;
+          }
+        }
+        .prow-price,.prow-area {
+          position: relative;
+          input {
+            padding-left: 40px !important;
+          }
+          &:before {
+            left: 28px;
+            position: absolute;
+            top: 52px;
+            z-index: 2;
+            color: $co-6;
+            font-size: 24px;
+          }
+        }
+        .prow-price:before {
+          content: '\e917';
+          font-family: $font-sesame;
+          font-size: 27px;
+        }
+
+        .prow-area:before {
+          content: '\e91f';
+          font-family: $font-wpl;
+        }
+
+        #wpl_listing_field_container10.prow-area{
+          &:before {
+            content: '\e90f';
+            font-family: $font-sesame;
+          }
+        }
+
+        #wpl_listing_field_container312, #wpl_listing_field_container313 {
+          width: 50% !important;
+          @include for-tablet {
+            width: 100% !important;
+          }
+        }
+        #wpl_listing_field_container308 {
+          width: 100% !important;
+          .wpl-pwizard-editor{
+            width: 100%;
+            display: block;
+          }
+        }
+        .prow-neighborhood{
+          @include for-tablet-land{
+            width: 50% !important;
+          }
+          .distance-wp{
+            @include for-tablet-land {
+              display: block;
+            }
+            .minute-by{
+              float: none;
+            }
+          }
+          .distance-value{
+            display: block;
+            float: none !important;
+            input{
+              max-width: 80px;
+            }
+          }
+          .radio-wp{
+            label, input{
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+          .checkbox-wp label{
+            @include for-tablet{
+              vertical-align: top;
+            }
+          }
+        }
+        .prow-separator {
+          display: block;
+          &:after {
+            border-bottom: 2px dashed $co-7;
+            border-top: none;
+          }
+        }
+
+        .prow-openhouse_dates{
+          input[type="text"]{
+            margin: 5px;
+          }
+        }
+        .wpl-save-btn{
+          margin-left: 0;
+          border-radius: 4px;
+          height: 30px;
+          border: 1px solid transparent;
+          &:hover{
+            background: transparent;
+            color: $main-color;
+            border-color: $main-color;
+          }
+        }
+
+        .wpl_listing_all_location_container_locations {
+          margin: 0 -20px;
+        }
+        .prow-locations {
+          width: 100% !important;
+          .location-part {
+            padding: 15px 20px;
+            width: 33.3% !important;
+            position: relative;
+            @include for-tablet {
+              width: 100% !important;
+            }
+            input[type="text"], select, .chosen-single, .chosen-container, .value-wp {
+              height: 40px;
+              width: 100% !important;
+            }
+            .chosen-single {
+              span,div b:after {
+                line-height: 40px;
+              }
+            }
+          }
+        }
+
+        .prow-googlemap {
+          width: 100% !important;
+          .map-form-wp {
+            position: relative;
+            .wpl-button {
+              position: absolute;
+              top: 30px;
+              right: 1px;
+              height: 40px;
+              border-radius: 0 4px 4px 0;
+              z-index: 2;
+            }
+          }
+        }
+
+        /*More details separator*/
+        .wpl-pwizard-prow-more_details {
+          border: 2px solid lighten($co-7, 7%);
+          text-align: center;
+          background: darken($co-1, 2%);
+          padding: 5px 0;
+          width: calc(100% - 40px) !important;
+          margin: 0 20px 20px;
+          cursor: pointer;
+          & > label {
+            line-height: 30px;
+            display: inline-block;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0 10px;
+            margin: 0;
+            color: $co-8;
+            font: {
+              size: 15px;
+              weight: bold;
+              family: $font-montserrat;
+            }
+            &:after {
+              border-bottom: none;
+              content: "\e929";
+              display: inline-block;
+              width: auto;
+              height: auto;
+              vertical-align: text-bottom;
+              position: absolute;
+              right: -7px;
+              top: -3px;
+              font: {
+                family: $font-wpl;
+                size: 17px;
+              }
+            }
+            span {
+              &:before, &:after {
+                display: none;
+              }
+            }
+            &:before {
+              display: none;
+            }
+
+            &.wpl-pwizard-more-details-opened {
+              &:after {
+                content: "\e92a";
+                top: 4px;
+              }
+            }
+          }
+
+          .prow-more_details {
+            padding: 0;
+          }
+          .prow {
+            width: 25% !important;
+            text-align: left;
+            @include for-tablet-land {
+              width: 100% !important;
+            }
+            @include for-tablet {
+              width: 100% !important;
+            }
+            input[type='number'] {
+              height: 50px !important;
+            }
+            &.prow.prow-separator {
+              width: 100% !important;
+            }
+          }
+          .prow-meta_desc, .prow-meta_key {
+            width: 100% !important;
+          }
+        }
+          .prow-meta_desc, .prow-meta_key {
+            background: transparent;
+            width: 100% !important;
+            & > label {
+              display: inline-block;
+              float: left;
+              padding-right: 10px;
+            }
+            .wpl-meta-wp {
+              display: block;
+            }
+            .wpl-top-row-wp {
+              display: inline-block;
+              width: auto;
+              margin-bottom: 5px;
+              border-radius: 15px;
+              padding: 4px 10px;
+              label {
+                display: block !important;
+                font-size: 13px;
+                color: $co-5;
+                margin-bottom: 0;
+                line-height: normal;
+                &:before {
+                  top: 0;
+                }
+              }
+            }
+            textarea {
+              background: $co-1;
+            }
+          }
+          .prow-meta_desc {
+            textarea {
+              height: 75px;
+            }
+          }
+
+          .prow-date, .prow-datetime,.openhouse-dates-wp {
+            .date-wp, div[id*="container"]{
+              position: relative;
+              &:after {
+                content: '\e6c0';
+                display: block;
+                opacity: 1;
+                z-index: 2;
+                position: absolute;
+                right: 9px;
+                top: 38px;
+                color: $co-6;
+                font: {
+                  family: $font-wpl;
+                  size: 22px;
+                }
+              }
+            }
+            img {
+              position: absolute;
+              right: 9px;
+              top: 40px;
+              opacity: 0;
+              z-index: 1;
+            }
+          }
+        .openhouse-dates-wp div[id*="container"] {
+          height: 84px;
+            &:after {
+              top: 10px;
+            }
+        }
+
+
+        /*Add rooms section*/
+        .prow-rooms {
+          width: 100% !important;
+          margin-top: 20px;
+          input, select, .chosen-single, button {
+            height: 40px !important;
+            margin-bottom: 5px;
+            span {
+              line-height: 40px;
+            }
+          }
+          select {
+            width: auto !important;
+            @include for-tablet {
+              width: 100% !important;
+            }
+          }
+          .chosen-container {
+            width: auto !important;
+            min-width: 270px;
+            @include for-tablet {
+              width: 100% !important;
+            }
+            .chosen-single {
+              padding-left: 44px;
+              &:before {
+                content: '\e901';
+                position: absolute;
+                left: 10px;
+                top: 5px;
+                color: $co-6;
+                font: {
+                  family: $font-sesame;
+                  size: 22px;
+                }
+              }
+            }
+          }
+          input {
+            width: auto !important;
+            @include for-tablet {
+              width: 100% !important;
+            }
+          }
+          .chosen-single div b:after {
+            line-height: 40px;
+          }
+          .wpl-button {
+            background: transparent;
+            text-transform: uppercase;
+            border: 2px solid $co-12;
+            color: $co-12;
+            border-radius: 4px;
+            line-height: 20px;
+            font: {
+              family: $font-montserrat;
+              size: 15px;
+              weight: bold;
+            }
+            &:after {
+              content: '+';
+              color: $co-12;
+              padding-left: 10px;
+              vertical-align: bottom;
+              font: {
+                family: $font-montserrat;
+                size: 26px;
+                weight: bold;
+              }
+            }
+            &:hover {
+              @include transition(350ms, all);
+              background: $co-12;
+              color: $co-1;
+              border-color: $co-12;
+              &:after {
+                color: $co-1;
+              }
+            }
+          }
+          .rooms-list-wp {
+            margin-top: 10px;
+            & > div {
+              width: 32%;
+              margin: 5px 1% 5px 0;
+              display: inline-block;
+              background: darken($co-1,3%);
+              border-radius: 4px;
+              padding: 0 0 0 10px;
+              position: relative;
+              height: 32px;
+              line-height: 32px;
+              overflow: hidden;
+              @include for-tablet {
+                width: 100%;
+              }
+              &:before {
+                content: '\e901';
+                position: absolute;
+                left: 10px;
+                top: 0;
+                color: $co-6;
+                font: {
+                  family: $font-sesame;
+                  size: 22px;
+                }
+              }
+            }
+            .room-preview {
+              @include calc(width, "100% - 33px");
+              float: left;
+              color: $co-8;
+              padding-left: 35px;
+              margin: 0;
+              font: {
+                family: $font-montserrat;
+                size: 13px;
+                weight: bold;
+              }
+              span {
+                float: left;
+              }
+              i {
+                float: right;
+                color: $co-5;
+                padding-right: 5px;
+                border: none;
+                font: {
+                  size: 14px;
+                  weight: normal;
+                  style: normal;
+                }
+              }
+            }
+            .action-btn {
+              float: right;
+              background: $co-2;
+              height: 100%;
+              padding: 0 10px;
+              border-radius: 0 4px 4px 0;
+              cursor: pointer;
+              width: 33px;
+              position: relative;
+              top: auto;
+              right: auto;
+              &:after {
+                content: $re-icon-trash-o;
+                top: 0;
+                left: 10px;
+                color: $co-10;
+                font: {
+                  family: $font-sesame;
+                  size: 14px;
+                }
+              }
+              &:hover {
+                @include transition(350ms, all);
+                background: darken($co-2, 5%);
+              }
+            }
+          }
+
+        }
+        /*End rooms*/
+
+        /*Media*/
+        .prow-gallery, .prow-addon_video,.prow-attachments {
+          width: 100% !important;
+          @include for-tablet {
+            padding: 15px 10px;
+          }
+          .video-tabs-wp {
+            border: none;
+            @include for-tablet {
+              width: 40%;
+              float: left;
+            }
+            @include for-phone{
+              width: 100%;
+              height: auto;
+            }
+            li {
+              width: 49%;
+              border: none;
+              @include for-tablet {
+                width: 100%;
+              }
+              a {
+                color: $co-8;
+                background: transparent;
+                cursor: text;
+                font: {
+                  family: $font-montserrat;
+                  size: 16px;
+                  weight: bold;
+                }
+                @include for-tablet {
+                  padding: 9px 0 10px;
+                }
+                &:hover {
+                  background: transparent;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+        .gallary-btn-wp .gallery-external-wp button{
+          margin-top: 20px;
+        }
+        .video-content-wp {
+          padding: 0;
+          @include for-phone{
+            width: 100%;
+          }
+        }
+        .gallary-btn-wp, .video-content-wp {
+          overflow: hidden;
+          border-bottom: 2px dashed $co-7;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+        }
+        .gallary-btn-wp{
+          @include for-tablet {
+            float: left;
+            width: 60%;
+            border: none;
+          }
+        }
+        .gallary-btn-wp, .video-content-wp, .wpl-mass-actions,.attach-btn-wp {
+          & > div {
+            display: block !important;
+            width: 49%;
+            float: left;
+            padding: 10px 30px;
+            @include for-tablet {
+              padding: 10px 0;
+              width: 100%;
+            }
+          }
+          .wpl-button {
+            background: transparent;
+            border: 2px solid $co-12;
+            color: $co-12;
+            border-radius: 4px;
+            line-height: 30px;
+            height: 40px;
+            font-size: 15px;
+            padding: 3px 10px;
+            @include for-tablet {
+              font-size: 14px;
+            }
+            &:after {
+              content: '+';
+              color: $co-12;
+              padding-left: 10px;
+              vertical-align: bottom;
+              font: {
+                family: $font-montserrat;
+                size: 26px;
+                weight: bold;
+              }
+            }
+            &:hover {
+              @include transition(350ms, all);
+              background: $co-12;
+              color: $co-1;
+              &:after {
+                color: $co-1;
+              }
+            }
+          }
+          .field-desc, .upload-btn-wp .field-desc {
+            display: none;
+          }
+        }
+        .attach-btn-wp > div{
+          width: auto;
+        }
+        .gallary-images-wp > ul > li,.attachment-wp > ul > li {
+          border: none;
+          padding: 20px 0;
+          .image-box-wp {
+            background: darken($co-1, 3%);
+            border-radius: 4px;
+          }
+          .image-wp,.icon-wp {
+            padding: 5px;
+            border: none;
+            img {
+              width: 145px;
+              height: 90px;
+            }
+          }
+          .info-wp {
+            @include calc(width, "100% - 160px");
+            padding: 5px;
+            @include for-tablet {
+              width: 100%;
+            }
+            .row {
+              padding-bottom: 0;
+              margin: 0 10px;
+            }
+            label {
+              display: inline-block;
+              text-align: right;
+              width: 145px;
+              line-height: 25px;
+              font-size: 13px;
+              margin-bottom: 5px;
+              @include for-tablet {
+                width: 100%;
+                text-align: left;
+              }
+            }
+            input {
+              @include calc(width, "100% - 215px");
+              display: inline-block;
+              height: 25px;
+              border: none;
+              margin-bottom: 5px;
+              min-width: 180px;
+              box-shadow: none;
+              @include for-tablet {
+                height: 40px;
+                width: 100%;
+              }
+            }
+            select, .chosen-single, .chosen-container, .gal_title {
+              display: inline-block;
+              width: auto !important;
+              height: 25px;
+              border: none;
+              margin-bottom: 5px;
+              @include for-tablet {
+                height: 40px;
+                width: 100% !important;
+              }
+            }
+            .chosen-single {
+              width: 100% !important;
+              font-size: 13px;
+              box-shadow: none;
+              div b:after {
+                line-height: 25px;
+              }
+              span {
+                line-height: 25px;
+              }
+              div b:after{
+                font-size: 12px;
+              }
+            }
+          }
+          .actions-wp {
+            top: 20px;
+            right: 0;
+            & > div {
+              width: 30px;
+              background: lighten($co-7, 7%);
+              border-radius: 4px;
+              border: none;
+            }
+            i {
+              font-style: normal;
+              &:after {
+                top: 7px;
+                left: 8px !important;
+                font-size: 14px;
+              }
+              &:before{
+                display: none;
+              }
+              &.icon-recycle{
+                &:after{
+                  content: $re-icon-trash-o;
+                  font-family: $font-sesame;
+                  font-size: 17px;
+                }
+              }
+            }
+          }
+        }
+
+        .attachment-wp{
+         &>ul>li {
+           vertical-align: top;
+            .icon-wp {
+              width: 120px;
+              height: 105px;
+              div {
+                text-align: center;
+                padding: 0;
+                &:before {
+                  font-size: 80px;
+                  vertical-align: top;
+                  line-height: 95px;
+                }
+              }
+            }
+            .info-wp {
+              vertical-align: middle;
+              label {
+                width: 180px;
+              }
+            }
+          }
+        } /*End Media*/
+
+        /*Finalize message*/
+        .wpl_slide_container10000{
+          background: transparent;
+        }
+        .after-finilize-wp{
+          .finilize-icon{
+            background: $co-9;
+            width: 45px;
+            height: 30px;
+            border-radius: 16px;
+            line-height: 30px;
+            text-align: center;
+            margin-top: 5px;
+            &:before{
+              content: '\e90b';
+              font-size: 25px;
+              vertical-align: middle;
+            }
+          }
+
+          .message-wp{
+            height: auto;
+            width: auto;
+            line-height: 33px;
+            padding-left: 10px;
+            span{
+              font:{
+                family: $font-montserrat;
+                size: 30px;
+                weight: 600;
+              }
+              color: $co-8;
+              padding: 0;
+            }
+            .finilize-btn-wp{
+              padding-top: 20px;
+              &>a{
+                font: {
+                  weight: 500;
+                  family: inherit;
+                  size: 16px;
+                }
+                height: 35px;
+                line-height: 28px;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
+
+      }/*End Content*/
+
+  /*Vertical layout*/
+  &.wpl-pwizard-vertical{
+    .side-tabs-wp {
+      @include for-tablet{
+        float: none;
+        width: 100% !important;
+        padding: 0 20px;
+      }
+      li {
+        @include for-tablet{
+          display: inline-block;
+          margin: 10px;
+        }
+        a {
+          background: transparent;
+          color: $text-color1;
+          border: none;
+          height: auto;
+          text-align: left;
+          line-height: 23px;
+          box-shadow: none;
+          font-size: 16px !important;
+          &:before {
+            content: '' !important;
+          }
+          &:focus,&:hover{
+            background: transparent;
+          }
+        }
+        &.active {
+          a {
+            color: $co-0;
+            box-shadow: none;
+          }
+        }
+        &.finilized a:before {
+          content: $re-icon-doubletick !important;
+        }
+
+        &.finilized, &.wpl-listing-discard-btn {
+          top: 10px !important;
+          @include for-tablet-land {
+            top: 50px !important;
+          }
+          @include for-tablet {
+            //top: 100px !important;
+            position: static;
+          }
+          a {
+            border-radius: 3px;
+            box-shadow: none;
+            line-height: 35px;
+          }
+        }
+      }
+    }
+
+
+    .side-content-wp{
+      border-top: none;
+      @include for-tablet{
+        width: 100%;
+      }
+
+      .prow{
+        width: 50% !important;
+        display: inline-block;
+        @include for-tablet{
+          width: 100% !important;
+        }
+
+        &.prow-separator, &.prow-meta_desc,&.prow-meta_key,&.prow-rooms,&.prow-locations,&.prow-googlemap,
+        &.prow-gallery,&.prow-addon_video,&.prow-attachments,&.prow-property_types{
+          width: 100% !important;
+        }
+        .distance-wp{
+          display: block;
+        }
+      }
+      .prow-locations{
+        .location-part{
+          width: 50% !important;
+          float: left;
+          @include for-phone{
+            width: 100% !important;
+          }
+        }
+      }
+
+      #wpl_listing_field_container313,#wpl_listing_field_container312{
+        width: 100% !important;
+      }
+    }
+
+  }/*End vertical layout*/
+
+  /*Finalize Discard buttons*/
+  .sidebar-wp {
+    .finilized, .wpl-listing-discard-btn {
+      position: absolute;
+      top: -55px;
+      width: 110px !important;
+      padding: 0;
+      @include for-tablet-land {
+        top: -40px;
+        right: auto;
+      }
+      @include for-tablet {
+        top: -40px;
+        right: auto;
+      }
+      a {
+        height: 35px !important;
+        padding: 0 10px;
+        text-align: left;
+        color: $co-1 !important;
+        border: none;
+        font: {
+          size: 15px;
+          family: $font-karla;
+          weight: 500;
+        }
+        &:hover {
+          @include transition(500ms, background);
+          text-decoration: none;
+        }
+        span {
+          padding: 0;
+          float: left;
+        }
+      }
+    }
+    .finilized {
+      right: 0;
+      @include for-tablet-land {
+        left: 120px;
+      }
+      @include for-tablet {
+        left: 120px;
+      }
+      a {
+        background: $co-9 !important;
+        &:hover {
+          background: darken($co-9, 10%) !important;
+        }
+
+        &:before {
+          content: $re-icon-doubletick !important;
+          font: {
+            size: 20px;
+            family: $font-sesame !important;
+          }
+          line-height: 33px;
+        }
+      }
+    }
+    .wpl-listing-discard-btn {
+      right: 120px;
+      @include for-tablet-land {
+        left: 0;
+      }
+      @include for-tablet {
+        left: 0;
+      }
+      a {
+        background: $co-10 !important;
+        &:hover {
+          background: darken($co-10, 10%) !important;
+        }
+        &:before{
+          padding-top: 0 !important;
+        }
+        i {
+          top: 6px;
+          &:before {
+            font-size: 20px;
+            content: '\e6b0';
+            display: inline-block;
+          }
+        }
+      }
+      #wpl_listing_discard span{
+        display: block;
+      }
+    }
+
+  }
+
+}
+.pwizard-wp.wpl_view_container .side-content-wp,
+.wpl-subscription-form-container,
+.wpl-login-form-remember-wp
+{
+  /*Checkbox*/
+  input[type='checkbox'] + label
+  {
+    cursor: pointer;
+    font-weight: normal;
+    color: $co-5;
+    position: relative;
+    padding: 0 0 0 20px !important;
+    display: inline-block;
+    line-height: 29px;
+  }
+  input[type='checkbox']:not(checked)
+  {
+    position: absolute;
+    opacity: 0;
+  }
+
+  input[type='checkbox'] + label:before
+  {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    background: $co-1;
+    border: 1px solid $co-5;
+    display: block;
+  }
+  input[type='checkbox']:checked + label:before
+  {
+    background: $link-color;
+    content: "\e02a";
+    color: $co-1;
+    font-family: $font-wpl;
+    font-size: 9px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 14px;
+    border-color: rgba($co-0, .1);
+    display: block;
+  }
+}

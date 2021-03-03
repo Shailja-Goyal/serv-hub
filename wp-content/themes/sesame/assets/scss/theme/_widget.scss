@@ -1,0 +1,30 @@
+/*!
+ * Widget Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.widget-title{
+  text-transform: uppercase;
+  color: $main-color;
+  margin-bottom: 20px;
+  font: {
+    family: $font-montserrat;
+    size: 26px;
+    weight: bold;
+  }
+  &:after{
+    content: '';
+    width: 40px;
+    height: 3px;
+    background: $secondary-color;
+    display: block;
+    margin-top: 10px;
+  }
+}
+.wpl_plisting_bottom_sidebar_container
+{
+  .widget
+  {
+    margin-bottom: 30px;
+  }
+}

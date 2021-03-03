@@ -1,0 +1,72 @@
+/*!
+ * 404 page styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.re-page-not-found
+{
+  .post
+  {
+    &.not-found
+    {
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+      padding: 100px 0;
+      padding-left: 200px;
+      @include for-tablet
+      {
+        padding: 0;
+      }
+    }
+  }
+  .re-entry-title
+  {
+    .large-font-size
+    {
+      font-size: 40px;
+    }
+    .small-font-size
+    {
+      font-size: 20px;
+    }
+  }
+  .re-search
+  {
+    padding: 10px;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+    background: $co-1;
+    border-radius: 2px;
+    input[type="search"],.search_submit_box
+    {
+      height: 40px;
+    }
+    .search_submit_box:after
+    {
+      line-height: 40px;
+    }
+    .search-submit
+    {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
+.re-not-found-bg
+{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 0;
+  top: 0;
+  background: url("../img/not-found.png") no-repeat;
+  background-size: 100%;
+  border-radius: 100%;
+  z-index: -1;
+  @include for-tablet
+  {
+    display: none;
+  }
+}
+
+

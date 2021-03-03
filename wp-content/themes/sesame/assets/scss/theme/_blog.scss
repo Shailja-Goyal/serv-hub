@@ -1,0 +1,117 @@
+/*!
+ * Single Post and Blog styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.re-post
+{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .post,.page
+  {
+    border:2px solid $co-2;
+    padding: 15px;
+ }
+}
+.re-widget-area
+{
+  .widget-container
+  {
+    margin-bottom: 40px;
+  }
+  .widget-title
+  {
+    font-size: 16px;
+    margin-bottom: 10px;
+    &:after
+    {
+      width: 30px;
+    }
+  }
+}
+
+.re-recent-post-title
+{
+  margin:10px 0;
+  a
+  {
+    color: $co-4;
+  }
+}
+.re-recent-post-content
+{
+  .re-read-more
+  {
+    margin-top: 20px;
+  }
+  .read-more
+  {
+    @extend .re-btn;
+    @extend .re-btn-transparent;
+
+    display: inline-block;
+  }
+}
+.re-recent-post-date
+{
+  border-bottom: 1px solid $co-3;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+/*Single post*/
+.post
+{
+  .entry-title
+  {
+    margin: 10px 0;
+    font-size: $post-title-font-size;
+    a
+    {
+      color:$post-title-color;
+    }
+  }
+
+  h1.entry-title
+  {
+    line-height:30px;
+  }
+  h2.entry-title
+  {
+    line-height:25px;
+  }
+}
+.single-post
+{
+  .post
+  {
+    .entry-title
+    {
+      font-size: $single-post-title-font-size;
+    }
+  }
+}
+.re-equal-height
+{
+  display: flex;
+  flex-wrap: wrap;
+  .re-post
+  {
+    display: inline-flex;
+    @include for-tablet-land{
+      width:100%;
+    }
+     @include for-tablet{
+      width:100%;
+    }
+    .post,.page
+    {
+      width: 100%
+    }
+  }
+}
+
+.comment-form-cookies-consent
+{
+  margin-bottom:20px;
+}
+

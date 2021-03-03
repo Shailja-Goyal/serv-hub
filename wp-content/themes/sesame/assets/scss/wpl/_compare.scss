@@ -1,0 +1,102 @@
+/*!
+ * WPL Compare Feature Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.wpl-compare-table {
+  border-width: 1px 1px 0 0;
+  border-color: darken($co-2, 5%);
+
+  td, th {
+    padding: 0;
+    vertical-align: bottom;
+  }
+  .wpl_gallery_container{
+    @include for-tablet{
+      height: 100%;
+    }
+  }
+
+  .wpl_gallery_image {
+    float: left;
+    width: 100% !important;
+  }
+
+  .wpl_property_title_row {
+    text-align: center;
+  }
+
+  .wpl-compare-property-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $co-0;
+    text-align: center;
+    line-height: 30px;
+    font: {
+      size: 16px !important;
+      family: $font-montserrat !important;
+      weight: 600;
+    }
+  }
+
+  thead{
+    tr th {
+
+      span {
+        text-transform: uppercase;
+        height: 40px;
+        line-height: 30px;
+      }
+
+      &:not(.wpl-compare-category) span{
+        color: $co-16;
+        font: {
+          family: $font-montserrat;
+          size: 13px;
+        }
+      }
+
+      &.wpl-compare-category{
+        text-align: left;
+        color: $co-15;
+        font-family: $font-montserrat;
+        border-top: none;
+      }
+
+    }
+  }
+
+  & > tbody {
+
+    tr td {
+      width: 240px;
+
+      span {
+        height: 40px;
+        line-height: 30px;
+        color: $text-color1;
+        font: {
+          family: $font-karla;
+          size: 15px;
+        }
+      }
+
+    }
+
+    .wpl-compare-empty-row{
+      border-top: none;
+    }
+
+  }
+
+  [data-wpl-label="Bedrooms"],
+  [data-wpl-label="Bathrooms"],
+  [data-wpl-label="Parking"],
+  [data-wpl-label="Built Up Area"]{
+    .wpl-compare-text:before{
+      line-height: 30px;
+    }
+  }
+
+}

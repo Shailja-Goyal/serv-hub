@@ -1,0 +1,186 @@
+/*!
+ * Owl Carousel Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.owl-testimonials
+{
+  overflow: hidden;
+  .owl-item
+  {
+    float: left;
+    position: relative;
+  }
+}
+/*Pagination*/
+.pagination
+{
+	text-align:center;
+	.nav-links
+	{
+		margin: 10px 0;
+		.page-numbers
+		{
+			border-radius: 50%;
+		    height: 40px;
+		    width: 40px;
+		    line-height: 40px;
+		    display: inline-block;
+		    box-sizing: border-box;
+		    padding: 0;
+		    text-align: center;
+		    vertical-align: middle;
+		    color: #b3b3b3;
+		    border: 2px solid #b3b3b3;
+		    font-family: "Montserrat",sans-serif;
+		    font-size: 14px;
+		    font-weight: 600;
+		    margin-right:10px;
+		    &.prev, &.next
+		    {
+		    	font-size:0;
+		    	&:after
+		    	{
+		    		line-height: 37px;
+				    position: static;
+				    width: auto;
+				    height: auto;
+				    font-family: "wpl-front";
+				    font-size: 10px;
+		    	}
+		    }
+		    &.prev:after
+		    {
+		        content: '\e654';
+		    }
+		    &.next:after
+		    {
+		        content: '\e655';
+		    }
+		    &.current
+		    {
+		        color: $secondary-color;
+			    border-color: $main-color;
+			    border-radius: 20px;
+			    width: 50px !important;
+		    }
+		}
+	}
+}
+/*Password Prodected Page*/
+.post-password-form
+{
+	display: block;
+    margin: 20px 0;
+    input[type=submit]
+    {
+    	@extend .re-btn;
+    	@extend .re-btn-default;
+    }
+    input[type=password]
+    {
+    	margin: 10px;
+    }
+}
+/**/
+.re-entry-links
+{
+	@extend .clearfix;
+}
+
+/*elementor counter, use "counter-left" class to align text on left*/
+.counter-left .elementor-counter .elementor-counter-number-prefix,
+.counter-left .elementor-counter .elementor-counter-number-suffix {
+	flex-grow: 0;
+}
+.counter-left .elementor-counter .elementor-counter-title {
+	text-align: left;
+}
+
+/*elementor testimonials, use "advanced" class*/
+.elementor-widget-testimonial_list.advanced {
+	.re-testimonial.slick-slider {
+		display: flex;
+		flex-wrap: wrap;
+		.slick-list {
+			order: 2;
+			.slick-slide {
+				padding-left: 0;
+				.re-testimonial-container {
+					background: transparent;
+					border: none;
+					padding: 0;
+					.re-content {
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+						max-width: calc(100% - 230px);
+						float: right;
+						background: #fff;
+						margin: 0 0 0 15px;
+						padding: 20px 15px;
+						border-left: 5px solid #064373;
+						@media (max-width: 1023px) and (min-width: 768px){
+							max-width: 100%;
+						}
+						@media (max-width: 480px){
+							max-width: 100%;
+						}
+						.re-client-name {
+							color: #1c1c1c;
+							font-weight: bold;
+							text-transform: uppercase;
+							text-align: left;
+							order: 1;
+							font-size: 17px;
+							margin-bottom: 20px;
+						}
+						.re-testimonial-content {
+							text-align: left;
+							order: 2;
+							.read-more {
+								color: #064373;
+								font-weight: bold;
+							}
+						}
+					}
+					.re-testimonial-thumb {
+						display: inline-block;
+						@media (max-width: 1023px) and (min-width: 768px){
+							display: block;
+						}
+						@media (max-width: 480px){
+							display: block;
+						}
+					}
+				}
+			}
+		}
+		.slick-dots {
+			order: 1;
+			margin: 0;
+			text-align: right;
+			width: 100%;
+			padding: 0 10px;
+		}
+	}
+}
+
+.btn.btn-primary{
+	background: $main-color;
+	border: 1px solid transparent;
+	&:hover{
+		background: transparent;
+		color: $main-color;
+		border-color: $main-color;
+
+	}
+}
+
+.re-comments a,
+article.post a,
+.textwidget a,
+.re-post a
+{
+	text-decoration: underline;
+}

@@ -1,0 +1,1277 @@
+/*!
+ * WPL Add-ons Styles. For WPL PRO Version Only
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+/*Complex Add-on*/
+.wpl-gen-tab-wp.wpl-complex-tabs-wp,.wpl-crm-form.wpl-crm-form-frontend .wpl-crm-grid-tab
+{
+  border-bottom: 2px solid $main-color;
+  ul li{
+    border: none;
+    border-right: 1px solid $co-3;
+    margin: 0;
+    background: transparent;
+    a{
+      background: transparent;
+      border-radius: 3px  3px 0 0;
+      color: $co-8;
+      font:
+      {
+        family: $font-montserrat;
+        style: normal;
+        size: 15px;
+      }
+      span{
+        background: $co-3;
+      }
+    }
+
+    &.wpl-gen-tab-active-parent{
+      border-right: none;
+      margin-left: -4px;
+      bottom: 0;
+      a.wpl-gen-tab-active
+      {
+        background: lighten($main-color,11%);
+        padding: 7px 15px;
+        color: $co-1;
+        span{
+          background: $secondary-color;
+        }
+      }
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+    &:last-child{
+      border-right: none;
+    }
+  }
+}
+/*End Complex Add-on*/
+
+/*Neighborhood Add-on*/
+.wpl_property_listing_container.wpl-neighborhood-addon{
+  .wpl_prp_cont
+  {
+    padding-bottom: 0 !important;
+
+    .wpl_prp_top
+    {
+      order: 1;
+    }
+    .wpl_prp_bot
+    {
+      order: 2;
+      position: relative;
+      padding:0;
+      .view_detail
+      {
+        display:block;
+        padding:10px;
+      }
+    }
+    .wpl_prp_title{
+      text-transform: none;
+      font-size: 18px;
+    }
+    .wpl_prp_listing_location{
+      margin:0;
+      a
+      {
+        color: $co-5;
+        padding:10px;
+      }
+      &:after{
+        display: none;
+      }
+    }
+    .wpl_prp_desc
+    {
+      bottom: auto;
+      top: -90px;
+    }
+
+    .wpl_prp_listing_icon_box
+    {
+      position: static;
+      div
+      {
+        padding: 10px;
+        width: 50%;
+        &:after{
+          display: inline-block !important;
+          font-size: 18px;
+          top: 0;
+        }
+      }
+      .total_listings, .pic_count
+      {
+        display: inline-block;
+      }
+    }
+
+    &.row_box{
+      .wpl_prp_title,.wpl_prp_listing_location{
+        margin-left: 0;
+      }
+      .wpl_prp_desc{
+        position: static;
+        display: block;
+        color: $text-color1;
+        font-size: 15px;
+        opacity: 1;
+        height: auto;
+        padding-left: 0;
+      }
+      .wpl_prp_top
+      {
+        flex: 1.5;
+        border-radius: 4px;
+      }
+      .wpl_prp_bot
+      {
+        padding-left: 25px;
+        flex: 3;
+      }
+      .wpl_gallery_container{
+        img{
+          height: 100% !important;
+        }
+      }
+      .wpl_prp_listing_icon_box{
+        width: 200px;
+        div:first-child{
+          border-left: 2px solid darken($co-2,3%);
+        }
+      }
+    }
+  }
+}
+.wpl_prp_show_container.wpl-neighborhood-addon{
+  .wpl_property_listing_list_view_container{
+    .wpl_prp_listing_icon_box>div {
+      &> .value {
+        display: inline-block;
+      }
+      &.built_up_area span{
+        display: inline-block;
+      }
+    }
+    .wpl_sort_options_container{
+      text-align: left;
+    }
+  }
+}
+/* End Neighborhood Add-on*/
+
+/*CRM Form*/
+.wpl-crm-form.wpl-crm-form-frontend{
+
+  .wpl-crm-grid-header{
+    color: $main-color;
+    text-transform: uppercase;
+    border: none;
+    padding: 0;
+    font:
+    {
+      family: $font-montserrat;
+      size: 26px;
+      weight: bold;
+    }
+    &:before{
+      content: '';
+      width: 40px;
+      height: 5px;
+      background: $secondary-color;
+      display: block;
+    }
+  }
+
+  .prow-separator .seperator-wp{
+    text-transform: uppercase;
+  }
+  .prow.wpl_listing_field_container{
+    label{
+      color: $co-8;
+      font:{
+        family: $font-montserrat;
+        size: 15px;
+        weight: bold;
+      }
+    }
+    input[type="text"],input[type="number"],select,.chosen-container .chosen-single{
+      border-radius: 3px !important;
+      border:1px solid $co-7;
+      box-shadow: 0 1px 0 $co-7;
+      background: rgba($co-1,.5);
+      color: $co-8;
+      height: 35px !important;
+      line-height: 35px;
+      font:{
+        family: $font-montserrat;
+        size: 15px;
+      }
+      @include for-phone{
+        width: 100% !important;
+      }
+    }
+  }
+  .prow-property_types{
+    width: 64.6%;
+    @include for-tablet{
+      width: 98%;
+    }
+    & > div {
+      width: 50%;
+      float: left;
+      @include for-phone{
+        width: 100%;
+      }
+      &:first-child {
+        padding-right: 12px;
+        @include for-phone{
+          padding: 0;
+        }
+      }
+      &:nth-child(2){
+        padding-left: 12px;
+        @include for-phone{
+          padding: 0;
+        }
+      }
+    }
+  }
+  .prow-mmprice,.prow-mmarea{
+    input{
+      @include for-phone{
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .wpl-crm-form-next-btn,.wpl-crm-form-submit-btn{
+    border-radius: 3px !important;
+    float: right;
+    min-width: 75px;
+    text-transform: uppercase;
+    background: $main-color;
+    border: 1px solid transparent;
+    font:{
+      family: $font-karla;
+      weight: normal;
+      size: 14px;
+    }
+    height: 35px;
+    line-height: 25px;
+    &:hover{
+      background: $co-1;
+      color: $main-color;
+      border-color: $main-color;
+    }
+
+    span{
+      top: 8px;
+    }
+  }
+}/*End CRM Form*/
+
+/*Mortgage Calculator*/
+.wpl_mcalc_container
+{
+  overflow: hidden;
+
+  .form-field{
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    line-height: 36px;
+    label{
+      vertical-align: middle;
+      color: lighten($co-0,9%);
+      float: left;
+    }
+    &>span{
+      position: relative;
+      float: left;
+      width: 150px;
+      display: block;
+    }
+  }
+
+  .wpl-mortgage-symbol{
+    position: absolute;
+    right: 10px;
+    color: $co-5;
+    text-transform: capitalize;
+    font-size: 90%;
+    background: $co-1;
+    line-height: 30px;
+    bottom: 5px;
+  }
+
+  .wpl_percent,.text-box{
+    width: 146px;
+  }
+  .text-box{
+    color: lighten($co-14,3%);
+    border-radius: 0;
+    border-color: $co-7;
+    height: 34px;
+  }
+
+  .form-result{
+    position: relative;
+    overflow: hidden;
+    line-height: 36px;
+    float: left;
+    label{
+      vertical-align: middle;
+      float: left;
+    }
+    .text-box{
+      width: 135px;
+      background: rgba($co-5,.1);
+      color: $secondary-color;
+      font-weight: 500;
+      float: left;
+      height: 34px;
+    }
+    .wpl-mortgage-symbol{
+      color: $main-color;
+      background: #f3f3f2;
+    }
+  }
+}  /*End Mortgage Calculator*/
+
+/*Booking add-on*/
+.booking .btn{
+  width: 100%;
+  margin: 10px 0;
+  &:hover{
+    color: $main-color;
+  }
+}
+.wpl-booking-inquire-wp{
+  padding: 0;
+}
+.wpl-booking-button-date>a{
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  color: $co-1;
+  background: $secondary-color;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  transition: .3s;
+  text-decoration: none;
+  line-height: 1.42857143;
+  margin: 10px 0;
+  &:hover,&:focus{
+    background: transparent;
+    color: $secondary-color;
+    border-color: $secondary-color;
+  }
+}
+.wpl-booking-show-price-wp{
+  border-color: $co-13;
+  font-size: 14px;
+  color: lighten($co-14, 3%);
+}
+.wpl-booking-price-row{
+  background: $co-21;
+}
+.wpl-booking-price-days{
+  width: 65%;
+  text-transform: lowercase;
+}
+.wpl-booking-price-value{
+  width: 35%;
+}
+.wpl-booking-price-type{
+  text-transform: capitalize;
+}
+.wpl-booking-price-row-total{
+  background: $co-1;
+
+  .wpl-booking-price-days
+  {
+    width: 90px;
+    text-transform: capitalize;
+  }
+  .wpl-booking-price-value{
+    @include calc(width,'100% - 90px');
+    font-weight: normal;
+  }
+}
+/*End Booking add-on*/
+
+/*Calendar Add-on*/
+.wpl_calendar_content{
+  position: relative;
+}
+.wpl-calendar-months-wp{
+  width: 100%;
+  padding: 10px 0;
+  &>div{
+    margin: 0;
+  }
+}
+.wpl-calendar-prev-next-wp{
+  position: absolute;
+  top: 10px;
+  height: 40px;
+  width: auto;
+  border-right: 1px solid $co-1;
+  &:last-child{
+    right: 0;
+    border-right: none;
+    border-left: 1px solid $co-1;
+  }
+}
+.wpl-calendar-prev-btn, .wpl-calendar-next-btn
+{
+  width: 40px;
+  height: 40px;
+  position: static;
+  margin: 0;
+  padding: 0;
+  &:before
+  {
+    font-size: 13px;
+    line-height: 40px;
+    color: $co-1;
+    font-weight: 600;
+  }
+}
+.wpl-calendar-table
+{
+  border: none;
+  th
+  {
+    background: $co-24;
+    color: $co-1;
+    font-family: $font-montserrat;
+  }
+  td{
+    border: none;
+    border-right: 1px solid $co-21;
+    border-bottom: 1px solid $co-21;
+  }
+}
+.wpl_calendar_seasons,.wpl_calendar_bookings{
+  width: 100%;
+}
+/*End Calendar Add-on*/
+
+/*Review Add-on*/
+.wpl-rate-title{
+  color: lighten($co-14, 3%);
+  padding-bottom: 5px;
+  font:{
+    family: $font-montserrat;
+    size: 13px;
+  }
+}
+
+.wpl-rate-info{
+  color: $co-5;
+  top: 10px;
+  font: {
+    family: $font-karla;
+    size: 12px;
+  }
+}
+
+.br-wrapper {
+  .br-widget{
+    margin-right: 55px;
+    border: 1px solid rgba($co-0,.1);
+    padding: 3px;
+  }
+  a {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 20%;
+    height: 10px;
+    background: $co-1;
+  }
+
+  .br-selected,.br-active,.wpl-review-rate-is-selected a.br-selected{
+    background: $co-1 url("../img/review_bg.png") no-repeat center;
+    background-size: 100% 10px;
+    border: none !important;
+  }
+
+  .wpl-review-rate-is-selected a.br-selected.br-current{
+    border: none !important;
+  }
+
+  .br-widget .br-current-rating
+  {
+    color: $co-16;
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    top: auto;
+    width: auto;
+    font:
+    {
+      family: $font-karla;
+      size: 16px;
+      weight: 500;
+      style: normal;
+    }
+  }
+}
+/*End Review Add-on*/
+
+/*Membership Add-on*/
+    /***User types***/
+.wpl_usertypes_container
+{
+  padding: 20px 0 !important;
+
+  li
+  {
+    .usertype_name
+    {
+      color: $main-color;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font:{
+        family: inherit;
+        size: 17px;
+        weight: 600;
+      }
+      &:before
+      {
+        display: none;
+      }
+      & > span
+      {
+        font-size: 64px;
+        padding: 20px;
+        background: $co-1;
+        border: 2px solid $co-2;
+        border-radius: 10px;
+        display: block;
+        max-width: 120px;
+        margin: 0 auto 20px auto;
+      }
+    }
+    &#wpl_usertypes_type1
+    {
+      .usertype_name:before
+      {
+        display: block;
+        background: $co-1;
+        border: 2px solid $co-2;
+        font-size: 64px;
+        color: $main-color;
+        margin: 0 auto 20px auto;
+      }
+    }
+  }
+
+  .usertype_register_link{
+    font-weight: normal;
+    background: $link-color;
+  }
+}
+    /***Membership types***/
+.wpl_addon_membership_container .wpl_memberships_label{
+  border-bottom: none;
+}
+
+.wpl_memberships_container{
+
+  &>li{
+    position: relative;
+    padding: 2px;
+    border-radius: 5px;
+    padding-bottom: 30px;
+    //height: auto !important;
+    width: 23%;
+    margin: 0 1%;
+    @include for-tablet{
+      width: 48%;
+      margin-bottom: 15px;
+    }
+    @include for-phone{
+      width: 98%;
+    }
+  }
+
+  .membership_register_link{
+    display: flex;
+    vertical-align: bottom;
+    align-items: flex-end;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    &:before{
+      display: none;
+    }
+  }
+
+  .wpl_memberships_wrap{
+    background: transparent;
+    position: relative;
+    z-index: 1;
+    border: none;
+    padding: 0;
+    left: 2px;
+    right: 2px;
+
+    .membership_headline,
+    .membership_short_description,
+    .membership_details,
+    .membership_long_description{
+      background: $co-1 !important;
+    }
+
+    .membership_headline{
+      margin-bottom: 2px;
+      border-radius: 5px 5px 0 0;
+      padding: 4px 7px;
+    }
+    .membership_details{
+      margin: 0;
+      font:
+      {
+        family: $font-karla;
+        size: 13px;
+      }
+      li
+      {
+        padding: 3px 4px;
+        margin-bottom: 5px;
+        &:last-child
+        {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .membership_long_description{
+      border-radius: 0 0 5px 5px;
+    }
+  }
+  .membership_price{
+    text-transform: uppercase;
+    font:
+    {
+      family: $font-montserrat;
+      size: 34px;
+      weight: 600;
+    }
+    &:first-letter{
+      font-size: 18px;
+      padding-right: 2px;
+    }
+  }
+  .membership_name{
+    color: $co-0;
+    font:{
+      family: $font-montserrat;
+      size: 19px;
+      weight: 600;
+    }
+  }
+}
+  /***Registration form***/
+
+#wpl_register_info{
+  text-align: center;
+  color: $text-color1;
+  padding: 15px 0 25px 0;
+  font:{
+    size: 16px;
+    family: $font-montserrat;
+    weight: 600;
+  }
+  strong
+  {
+    font-weight: 700;
+    &:first-child
+    {
+      color: $co-0;
+      position: relative;
+      display: inline-block;
+      &:after {
+        @include calc(left, '50% - 17px');
+        content: '';
+        width: 35px;
+        height: 3px;
+        background: $secondary-color;
+        display: block;
+        position: absolute;
+        bottom: -10px;
+      }
+    }
+  }
+}
+.wpl_dashboard_registeration
+{
+
+  .wpl-subscription-steps
+  {
+    position: static;
+    float: right;
+    width: 320px;
+    @include for-tablet
+    {
+      width: auto;
+      float: none;
+      margin: 30px;
+    }
+
+    li
+    {
+      background: $co-7;
+      height: 3px;
+
+      span
+      {
+        color: $co-0;
+        font: {
+          family: $font-montserrat;
+          size: 13px;
+          weight: 600;
+        }
+      }
+
+      &:before, &:after
+      {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 3px;
+        border-width: 2px;
+        top: -14px;
+      }
+
+      &:first-child:before
+      {
+        margin-left: -22%;
+      }
+
+      &:last-child:before{
+        border-color: $link-color;
+      }
+
+      &:last-child:after
+      {
+        margin-right: -22%;
+        border-color: $co-7;
+      }
+
+      &.active,&:first-child
+      {
+        background: $link-color;
+        &:before{
+          background: $link-color;
+          border-color: $link-color;
+        }
+        span
+        {
+          color: $main-color;
+        }
+      }
+
+      &.active
+      {
+        &:after
+        {
+          border-color: $link-color;
+        }
+      }
+    }
+  }
+}
+
+#wpl_membership_register_registration_container
+{
+  @include calc(width,'100% - 350px');
+  float: left;
+  @include for-tablet
+  {
+    width: 100%;
+  }
+}
+
+.wpl_subscription_form_account_info_container
+{
+  legend
+  {
+    text-transform: uppercase;
+    color: $main-color;
+    line-height: 50px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    font:
+    {
+      family: $font-montserrat;
+      size: 18px;
+      weight: 700;
+    }
+    &:after
+    {
+      @include calc(width,'100% - 180px');
+      content: '';
+      height: 3px;
+      background: $co-7;
+      position: absolute;
+      top: 44%;
+      right: 20px;
+    }
+  }
+}
+
+.wpl_membership_field_row
+{
+  width: 80%;
+  position: relative;
+  margin: 7px auto 7px 0;
+  label
+  {
+    display: inline-block;
+    color: $co-0;
+    font:
+    {
+      family: $font-montserrat;
+      size: 14px;
+      weight: 600;
+    }
+    .required
+    {
+      position: absolute;
+      right: 10px;
+      top: 30%;
+      color: $secondary-color;
+    }
+  }
+  input[type='text']
+  {
+    @include calc(width,'100% - 125px');
+  }
+
+  label[for='wpl_membership_agreement']
+  {
+    color: $co-5;
+    line-height: 29px;
+    font-weight: 600;
+    a
+    {
+      color: $co-0;
+    }
+  }
+}
+
+.wpl-payment-invoice
+{
+  @include calc(width,'100% - 350px');
+  @include for-tablet{
+    width: 100%;
+  }
+}
+
+#wpl_login_form_container .wpl-login-form
+{
+  border: none;
+  @include for-tablet{
+    margin: 0;
+  }
+
+  .wpl-login-form-remember-wp
+  {
+    float: left;
+    margin: 5px 0 !important;
+    padding: 20px 15px;
+  }
+
+  .wpl-login-form-btns-wp
+  {
+    border-bottom: 2px solid $co-13;
+    padding: 20px 0 !important;
+    margin: 0 15px 8px;
+
+    &+.wpl-login-form-row
+    {
+      display: inline-block;
+      width: 49%;
+      text-align: right;
+      padding-right: 20px;
+      padding-top: 20px;
+      a {
+        color: $co-6;
+      }
+      &+.wpl-login-form-row{
+        display: inline-block;
+        width: 49%;
+        padding-left: 0;
+        a
+        {
+          color: $co-6;
+        }
+        &:before
+        {
+          content: '\00A6';
+          margin-right: 20px;
+          transform: scale(-0.2, 1.2);
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+#wpl_login_form button[type="submit"]
+{
+  background: transparent;
+  border: 2px solid $co-5;
+  color: $co-5;
+  padding: 10px 55px;
+  line-height: normal;
+  font-weight: normal;
+  transition: .3s;
+  &:after{
+    display: none !important;
+  }
+  &:hover
+  {
+    color: $co-1;
+    background: $main-color;
+    border-color: $main-color;
+  }
+}
+
+.wpl_addon_membership_container  .wpl_membership_addon_label
+{
+  border-bottom: none;
+}
+
+.wpl-login-form-row
+{
+  label
+  {
+    color: $co-0;
+    font-weight: 600;
+    padding-bottom: 5px;
+  }
+}
+
+/***Dashboard***/
+.wpl_dashboard
+{
+  background: transparent;
+  border: none;
+}
+
+.wpl_dashboard_side2
+{
+  border: 2px solid $co-13 !important;
+}
+
+.wpl_addon_membership_container
+{
+
+  .wpl_dashboard_header
+  {
+    padding: 0 0 30px;
+  }
+  .wpl_dashboard_side1
+  {
+    padding: 0;
+  }
+  .wpl_dashboard_side2 .wpl_dashboard_links
+  {
+    li
+    {
+      padding: 0 15px;
+      line-height: 50px;
+
+      &:before
+      {
+        line-height: 50px;
+        color: $co-0;
+      }
+      a, h4
+      {
+        color: $co-0;
+        font: {
+          family: $font-montserrat;
+          size: 15px;
+          weight: 600;
+        }
+        &:before
+        {
+          content: '';
+          width: 1px;
+          height: 20px;
+          background: rgba($co-0, .12);
+          display: inline-block;
+          margin: 0 15px 0 10px;
+          vertical-align: middle;
+        }
+      }
+
+      &.active
+      {
+        background: $co-21;
+        a {
+          color: $co-0;
+        }
+      }
+      &.properties_link
+      {
+        padding: 0 15px;
+        text-indent: 0;
+        ul
+        {
+          background: transparent;
+        }
+      }
+      &:not(.properties_link):hover
+      {
+        background: $main-color;
+
+        &:before, a, h4
+        {
+          color: $co-1;
+        }
+      }
+      &.changepassword_link, &#wpl_kind0,
+      &#wpl_kind4, &.logout_link
+      {
+        &:before {
+          font-family: $font-sesame;
+        }
+      }
+      &.changepassword_link:before
+      {
+        content: '\e930';
+      }
+      &#wpl_kind0:before
+      {
+        content: "\e92d";
+      }
+      &#wpl_kind1:before
+      {
+        content: "\e649";
+      }
+      &#wpl_kind4:before
+      {
+        content: "\e92f";
+      }
+      &.wpl-addon-save-searches-link:before
+      {
+        content: '\e943';
+      }
+      &.logout_link:before
+      {
+        content: "\e92e";
+      }
+    }
+  }
+
+  .wpl-button.button-1,#wpl_change_password_submit{
+    background: $main-color;
+    text-transform: uppercase;
+    height: 30px;
+    line-height: normal;
+    border: 1px solid transparent;
+    font:{
+      family: $font-karla;
+      size: 14px;
+      weight: 500;
+    }
+    &:hover{
+      background: transparent;
+      border-color: $main-color;
+      color: $main-color;
+    }
+  }
+
+  .wpl-payment-tabs-wp{
+    border-bottom-color: $secondary-color;
+    ul li {
+      &.wpl-gen-tab-active-parent,&:hover{
+        background: $main-color;
+      }
+    }
+  }
+
+  .administrator_link
+  {
+    border: 2px solid $co-13;
+    border-radius: 3px;
+    line-height: normal;
+    padding: 7px 10px;
+    color: $co-6;
+    transition: .3s;
+    &:hover{
+      background: $main-color;
+      border-color: $main-color;
+      color: $co-1;
+    }
+  }
+}
+
+#wpl_dashboard_bottom_container>div:first-child
+{
+  border: none;
+}
+.wpl-ewallet-wp
+{
+  padding: 0;
+
+  &>div{
+    padding: 10px 15px;
+  }
+}
+
+.wpl-ewallet-balance,.wpl-ewallet-balance span
+{
+  text-transform: uppercase;
+  font: {
+    family: $font-montserrat;
+    size: 18px;
+    weight: 700;
+  }
+}
+.wpl-ewallet-balance
+{
+  color: $main-color;
+  border-radius: 0;
+  background: lighten($co-21,2%);
+  border-bottom: 1px solid rgba($co-0,.1);
+  margin-bottom: 0;
+
+  span
+  {
+    color: $secondary-color;
+    line-height: inherit;
+  }
+}
+.wpl-ewallet-charge
+{
+  border: 1px solid $co-13;
+  background: darken($co-1,2%) url("../img/ewallet.png") no-repeat top right;
+  background-size: contain;
+
+  form
+  {
+    input[type="number"],input[type="submit"]
+    {
+      display: inline-block;
+      float: none;
+      height: 30px;
+      line-height: normal;
+    }
+    input[type="number"]
+    {
+      border-radius: 3px;
+      border: 1px solid $co-2;
+      border-bottom-width: 2px;
+      color: $co-8;
+      font-family: $font-montserrat;
+      font-weight: 600;
+    }
+    input[type="submit"]
+    {
+      background: $main-color;
+      text-transform: uppercase;
+      font:{
+        family: $font-karla;
+        size: 14px;
+        weight: 500;
+      }
+    }
+  }
+}
+
+.wpl-membership-wpluser-head,
+#wpl_dashboard_bottom_container
+{
+  .wpl_activity_title
+  {
+    color: $main-color;
+    text-transform: uppercase;
+    border-bottom: none;
+    padding: 0 25px 10px 25px;
+    font:
+    {
+      family: $font-montserrat;
+      size: 18px;
+      weight: 700;
+    }
+    &:before{
+      display: none;
+    }
+    &:after{
+      content: '';
+      width: 40px;
+      height: 5px;
+      background: $secondary-color;
+      display: block;
+    }
+  }
+
+  .tab-content
+  {
+    border-top: none;
+    padding: 10px 25px;
+  }
+}
+.wpl-membership-wpluser {
+  li{
+    background: lighten($co-21,2%);
+    .membership-label
+    {
+      color: lighten($co-14,2%);
+      font: {
+        family: $font-karla;
+        size: 15px;
+        weight: 500;
+      }
+    }
+    .membership-value{
+      color: $co-0;
+      font: {
+        family: $font-montserrat;
+        size: 15px;
+      }
+    }
+  }
+  li.wpl-expiry-date {
+    margin: 15px -25px -10px -25px;
+    padding: 10px;
+    border: none;
+    background: lighten($co-21, 2%);
+  }
+}
+/*End Membership Add-on*/
+
+.wpl_prp_show_layout2_container.wpl-neighborhood-addon .wpl_prp_listing_icon_box
+{
+    margin:0;
+    & > div
+    {
+      margin: 0;
+      padding-left:10px;
+    }
+}
+
+
+
+
+
+

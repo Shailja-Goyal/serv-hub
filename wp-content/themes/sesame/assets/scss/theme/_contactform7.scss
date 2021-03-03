@@ -1,0 +1,43 @@
+/*!
+ * Contact Form 7 styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.wpcf7-form
+{
+  input,select,textarea
+  {
+    width: 100%;
+  }
+}
+.wpcf7-form-control-wrap
+{
+  margin-bottom: 20px;
+  display: block;
+}
+
+.wpcf7-submit
+{
+  @extend .re-btn;
+}
+.re-contact-form-style1
+{
+  .wpcf7-submit
+  {
+    background: $link_color;
+    border-color: $link_color;
+    color:$co-1;
+  }
+  input,select,textarea
+  {
+    background: rgba(256,256,256,0.1);
+    border-color: rgba(256,256,256,0.6);
+    @include placeholder($co-1);
+    color:$co-1;
+    font-size: 16px;
+  }
+  .widget-title
+  {
+    color:$co-1;
+  }
+}

@@ -1,0 +1,900 @@
+/*!
+ * WPL Property Listings Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+/*Sort options/View switcher*/
+.wpl_sort_options_container {
+  line-height: 50px;
+  .wpl_sort_options_container_title, .wpl-sort-options-list {
+    display: none;
+  }
+  .wpl-sort-options-selectbox {
+    display: inline-block !important;
+    position: relative;
+    vertical-align: middle;
+    margin-left: -10px;
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+    select {
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding-right: 20px;
+      background: none;
+      cursor: pointer;
+      color: $link-color;
+      @media (max-width: 480px) {
+        width: 100%;
+      }
+      font: {
+        family: $font-montserrat;
+        size: 16px;
+        weight: bold;
+      }
+    }
+    &:after {
+      content: '\e67c';
+      position: absolute;
+      top: 12px;
+      right: 0;
+      color: $link-color;
+      line-height: normal;
+      font: {
+        family: $font-wpl;
+      }
+    }
+
+    .chosen-container-single .chosen-single div b {
+      display: none;
+    }
+  }
+}
+
+  .wpl_options_switch_parent{
+    position: static !important;
+    float: right;
+    text-transform: uppercase;
+    color: $co-6;
+    vertical-align: middle;
+    line-height: normal;
+  }
+  .wpl_options_switch{
+    @include border-radius(3px);
+    border: 2px solid darken($co-1,6%);
+    padding: 8px 11px;
+    color: $co-6;
+    font: {
+      family: $font-montserrat;
+      size: 15px;
+      style: normal;
+      weight: 600;
+    }
+  }
+
+  .wpl_list_grid_switcher,.wpl_list_grid_switcher.wpl-list-grid-switcher-icon-text {
+    @extend .wpl_options_switch_parent;
+    margin-left: 15px;
+    div, a {
+      @extend .wpl_options_switch;
+      &.active {
+        background: transparent !important;
+        border-color: darken($co-1, 6%) !important;
+        color: $link-color;
+        &:after {
+          display: none;
+        }
+        &:before {
+          color: $link-color !important;
+        }
+      }
+      span {
+        display: inline-block !important;
+      }
+      &:before {
+        font-family: $font-sesame;
+      }
+    }
+    .grid_view {
+      @include border-radius(3px 0 0 3px);
+      &:before {
+        content: "\e902" !important;
+      }
+    }
+    .list_view {
+      @include border-radius(0 3px 3px 0);
+      margin-left: 0 !important;
+      border-left: none;
+      padding-right: 22px;
+      &:before {
+        content: "\e903" !important;
+      }
+    }
+    .map_view {
+      background: darken($co-1, 6%);
+      color: $main-color;
+      &:before {
+        color: $secondary-color;
+        content: "\e90d" !important;
+      }
+    }
+    &:not(.wpl-list-grid-switcher-icon-text) {
+      & > div, & > a {
+        width: auto;
+        height: 36px;
+        padding: 8px;
+        &:before{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .wpl-rss-wp {
+    @extend .wpl_options_switch_parent;
+    margin: 6px 0;
+    .wpl-rss-link{
+      @extend .wpl_options_switch;
+      &:hover{
+        background: $main-color;
+      }
+    }
+  }
+  .wpl-print-rp-wp {
+    @extend .wpl_options_switch_parent;
+    margin: 6px -2px 6px 0;
+    .wpl-print-rp-link{
+      @extend .wpl_options_switch;
+      display: block;
+      line-height: 15px;
+    }
+  }
+  .wpl-save-search-wp {
+    @extend .wpl_options_switch_parent;
+    margin: 6px -2px 6px 0;
+    .wpl-save-search-link{
+      @extend .wpl_options_switch;
+      @include border-radius(3px 0 0 3px);
+      &:after{
+        content: '\e002';
+      }
+    }
+  }
+  .wpl-landing-page-generator-wp{
+    @extend .wpl_options_switch_parent;
+    margin: 6px -2px 6px 0;
+    .wpl-landing-page-generator-link{
+      @extend .wpl_options_switch;
+      line-height: 16px;
+      height: auto;
+      background: transparent;
+      span{
+        display: none;
+      }
+      &:after{
+        position: static;
+        font-size: 14px;
+      }
+    }
+  }
+  .wpl-rss-link,.wpl-save-search-link,.wpl-landing-page-generator-link{
+    background: transparent;
+    height: auto;
+    color: $co-6;
+    vertical-align: middle;
+    line-height: 16px;
+  }
+/*end Sort options*/
+
+/*Pagination*/
+.wpl_pagination_container,
+.wpl-profile-listing-wp .wpl_pagination_container,
+.wpl_property_listing_container.wpl-property-listing-mapview .wpl_pagination_container,
+.pagination-wp{
+  border-top: none;
+  .pagination{
+    float: none;
+    width: 100%;
+    text-align: center;
+    li{
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+      line-height: 37px;
+      margin: 5px;
+      a,span{
+        border-radius: 50%;
+        height: 40px;
+        width: 40px !important;
+        display: block;
+        box-sizing: border-box;
+        padding: 0;
+        text-align: center;
+        vertical-align: middle;
+        color: $co-6 !important;
+        border: 2px solid $co-6;
+        font: {
+          family: $font-montserrat;
+          size: 14px;
+          weight: 600;
+        }
+      }
+      &.active{
+        a{
+          color: $secondary-color !important;
+          border-color: $main-color !important;
+          border-radius: 20px;
+          width: 50px !important;
+        }
+      }
+    }
+    .prev,.next {
+      a {
+        font-size: 0;
+        &:before {
+          line-height: 37px;
+          position: static;
+          width: auto;
+          height: auto;
+          font: {
+            family: $font-wpl;
+            size: 10px;
+          }
+        }
+      }
+    }
+    .prev a:before{
+      content: '\e654' !important;
+    }
+    .next a:before{
+      content: '\e655' !important;
+    }
+  }
+  .wpl_page_size_options{
+    width: auto;
+    min-width: 30px;
+  }
+}
+/**Property listing**/
+.wpl_property_listing_container{
+
+  .wpl_prp_cont{
+    border-radius: 4px;
+    border: 1px solid darken($co-2,3%);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    margin: 15px 0;
+    //&.grid_box
+    //{
+
+      .wpl_prp_title,.wpl_prp_listing_location,.price_box
+      {
+        text-align: left;
+      }
+      .wpl_prp_listing_icon_box
+      {
+        border-top:1px solid darken($co-2,3%);
+      }
+      .wpl_prp_listing_location
+      {
+        font-size:14px;
+        height: auto;
+      }
+      .price_box
+      {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        left: auto;
+        bottom: auto;
+        z-index: 10;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+        color: $co-1;
+        span
+        {
+          background: none;
+          color: $co-1;
+          font-size: 22px;
+          text-shadow: 0 0 2px rgba(0,0,0,1);
+          font-weight: bold;
+        }
+      }
+    //}
+    .wpl_prp_top{
+      margin: 0;
+    }
+    .wpl_prp_bot{
+      padding: 10px;
+    }
+    .wpl_prp_listing_location {
+      margin: 6px 0 0 0;
+      text-transform: none;
+    }
+    .wpl_gallery_image{
+      @include transform(scale(1.12));
+      @include transition(opacity 0.35s, transform 0.35s);
+    }
+    .wpl_prp_top_boxes {
+      &.front {
+        position: relative;
+      }
+      &.back .view_detail {
+        font: {
+          family: $font-montserrat;
+          size: 21px;
+          weight: bold;
+        }
+        text-transform: uppercase;
+      }
+      .no_image_box{
+        @include transform(scale(1.12));
+        @include transition(opacity 0.35s, transform 0.35s);
+        width: 100% !important;
+        font-size: 13px;
+      }
+    }
+
+    .wpl_prp_listing_like{
+      li:before{
+        font-size: 30px;
+        width: 32px;
+      }
+    }
+
+    &:not(.row_box){
+      padding-bottom: 45px !important;
+      .wpl_prp_listing_icon_box {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+      }
+    }
+    /*List view*/
+    &.row_box{
+      padding: 0;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      @include for-tablet{
+        flex-direction: column;
+      }
+
+      .wpl_prp_top{
+        border-radius: 4px 0 0 4px;
+        flex: 0.5;
+        width: auto;
+        order: 1;
+
+        @include for-tablet{
+          border-radius: 0;
+        }
+      }
+      .wpl_prp_bot{
+        flex: 3.5;
+        position: relative;
+        order: 2;
+      }
+      .wpl_prp_title{
+        font-size: 16px;
+        @include for-tablet
+        {
+          text-align: left;
+        }
+      }
+      .wpl_prp_listing_location{
+        font-size: 14px;
+        height: auto;
+        @include for-phone
+        {
+          text-align: left;
+        }
+        &:after{
+          display: none;
+        }
+      }
+      .back .view_detail {
+        font-size: 16px;
+      }
+      .wpl_prp_desc{
+        display: none;
+      }
+      .price_box{
+        @include for-all-non-mobile-tablet
+        {
+          left: 0;
+          bottom: 5px;
+          top: auto;
+          span{
+            font-size: 16px;
+          }
+        }
+      }
+      .wpl_prp_listing_like{
+        left:0;
+        top: 10px;
+        right: auto;
+        li:before
+        {
+          font-size: 23px;
+        }
+      }
+      .wpl_gallery_container img{
+        height: auto !important;
+        min-height: 80px;
+      }
+      .wpl_prp_listing_icon_box{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 15px;
+        border:0;
+        border-left: 1px solid darken($co-2, 3%);
+        @include for-tablet{
+          position: static;
+          margin: 10px 0 0 0;
+        }
+        div {
+          font-size: 16px;
+          border: 1px solid darken($co-2, 3%);
+          border-left: 0;
+          &:last-child {
+            border-color: darken($co-2, 3%);
+          }
+        }
+      }
+    }/* End list view*/
+    .wpl_prp_listing_like
+    {
+      bottom: auto;
+      top:12px;
+    }
+  }
+  /*Map view*/
+  &.wpl-property-listing-mapview {
+    @include calc(left, '50.8% - 50vw');
+    width: 99vw !important;
+
+    .wpl_googlemap_container.wpl_googlemap_plisting {
+      width: 50%;
+      padding: 0;
+      height: 83vh !important;
+      @include for-tablet{
+        width: 100%;
+      }
+    }
+    .wpl_property_listing_list_view_container {
+      width: 50% !important;
+      position: static;
+      margin-top: 0;
+      display: flex;
+      flex-flow: column nowrap;
+      overflow: visible;
+      padding-left: 15px;
+      height: 83vh;
+      margin: {
+        right: 0;
+        left: 0;
+      }
+
+      @include for-tablet {
+        position: relative;
+        width: 100% !important;
+        margin-right: -100%;
+      }
+      &.close {
+        margin-left: -285px;
+        @include for-tablet{
+          margin-left: -288px;
+        }
+      }
+      &.open {
+        margin-left: 0;
+      }
+
+
+    }
+    .wpl-row.wpl_property_listing_listings_container {
+      height: 90vh;
+      margin: 10px 0 0 -10px !important;
+      padding-right: 0;
+      display: flex;
+      flex-wrap: wrap;
+      @include for-tablet{
+        margin: 10px 0 0 0 !important;
+      }
+    }
+    .wpl-column {
+      padding: 0 10px !important;
+      width: 50%;
+      margin-bottom: 20px;
+      &:nth-child(odd){
+        padding-left: 0;
+      }
+      @include for-tablet{
+        width: 100%;
+      }
+    }
+    .wpl_prp_cont.wpl_prp_cont_old{
+      .wpl_prp_top {
+        width: 100% !important;
+        max-height: 100%;
+        .wpl_gallery_container {
+          img {
+            height: auto !important;
+            width: 100% !important;
+          }
+        }
+      }
+    }
+    .price_box
+    {
+      position: absolute !important;
+      top: 10px !important;
+    }
+    /*.wpl_prp_cont.wpl_prp_cont_old{
+      margin-bottom: 20px;
+      padding: 0;
+      .wpl_prp_top {
+        width: 100% !important;
+        max-height: 100%;
+        .wpl_gallery_container {
+          img {
+            height: auto !important;
+            width: 100% !important;
+          }
+        }
+      }
+      .wpl_prp_bot{
+        width: 100%;
+        padding-top: 10px;
+        .view_detail .wpl_prp_title{
+          font-size: 16px !important;
+          //text-align: center;
+        }
+        .wpl_prp_listing_location{
+          height: 37px;
+          font-size: 14px;
+          white-space: nowrap;
+          //text-align: center;
+          margin-top: 6px;
+          color: $co-5;
+        }
+        .wpl_prp_listing_icon_box div{
+          margin: 0;
+          font-size: 18px;
+          @include for-all-non-desktop-devices{
+            font-size: 14px;
+          }
+          &:before{
+            display: none;
+          }
+        }
+        .wpl_prp_desc{
+          display: block;
+        }
+      }
+      .price_box span{
+        font-size: 16px;
+      }
+
+    }*/
+    .wpl_sort_options_container {
+      padding: 15px 27px 0 0;
+      position: static;
+      .wpl-sort-options-selectbox {
+        vertical-align: top;
+        select {
+          width: 100%;
+          padding-left: 10px;
+          @include for-tablet {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .wpl_list_grid_switcher{
+        height: auto;
+        div{
+          @include for-phone{
+            padding: 8px 6px;
+          }
+        }
+      }
+      .wpl-rss-wp,.wpl-save-search-wp,
+      .wpl-print-rp-wp,.wpl-landing-page-generator-wp{
+        margin: 3px 0;
+      }
+      .wpl-rss-wp .wpl-rss-link{
+        @include for-tablet-land{
+          padding: 8px 11px;
+          width: auto;
+        }
+      }
+      .wpl-landing-page-generator-link{
+        padding-right: 11px !important;
+      }
+    }
+
+    .wpl_pagination_container{
+      margin-top: 0 !important;
+      margin-bottom: 20px;
+      width: 100%;
+      position: sticky;
+      .pagination{
+        width: auto;
+        li{
+          @include for-phone{
+            line-height: 30px;
+          }
+          a,span{
+            @include for-phone{
+              width: 32px !important;
+              height: 32px;
+            }
+          }
+          &.next a:before,&.prev a:before{
+            @include for-phone{
+              line-height: 30px;
+            }
+          }
+        }
+      }
+      .wpl_page_size{
+        display: none;
+      }
+    }
+/*UI Kit listing on left side*/
+    &.wpl_prp_listing_left{
+      .wpl_googlemap_container.wpl_googlemap_plisting {
+        right: 0;
+      }
+      .wpl_property_listing_list_view_container {
+        float: left !important;
+      }
+      .map_view_handler {
+        @include for-tablet {
+          left: auto;
+          right: 0;
+        }
+        &:before {
+          @include for-tablet {
+            @include transform(rotateY(179deg));
+            left: -26px;
+          }
+        }
+      }
+    }
+
+  }/*End map view*/
+
+  .view_detail .wpl_prp_title{
+    color: $link-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    //height: 20px;
+  }
+  .wpl_prp_listing_location{
+    font-family: $font-karla;
+    color: $co-5;
+  }
+  .wpl_prp_listing_icon_box{
+    display: flex;
+    div{
+      display: none;
+      border-right: 1px solid darken($co-2,3%);
+      margin: 0;
+      padding: 10px;
+      color: $text-color1;
+      box-sizing: border-box;
+      white-space: nowrap;
+      font:{
+        family: $font-karla;
+        size: 18px;
+        weight: bold;
+      }
+      &:first-child{
+        border-left: none;
+      }
+      &:after{
+        display: none !important;
+      }
+      &:before{
+        display: inline-block !important;
+        float: none !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        padding-right: 8px;
+        vertical-align: bottom;
+        color: $co-6;
+        line-height: 22px;
+        transform: none !important;
+        font:{
+          size: 20px;
+          family: $font-sesame;
+          weight: normal;
+        }
+      }
+    }
+    .bedroom,.bathroom,.built_up_area{
+      display: inline-block;
+    }
+    .bedroom:before{
+      content: $re-icon-Bedroom !important;
+    }
+    .bathroom:before{
+      content: $re-icon-Bathroom !important;
+    }
+    .built_up_area {
+      span{
+        font-size: 12px;
+        color: $co-6;
+        text-transform: lowercase;
+      }
+      &:before {
+        content: $re-icon-SQFT !important;
+      }
+    }
+  }
+
+  .wpl-listing-tags-wp {
+    right: auto;
+    left: 10px;
+    top: 0;
+    bottom: auto;
+    .wpl-listing-tags-cnt div {
+      color: $co-1;
+      text-transform: uppercase;
+      line-height: 16px;
+      padding: 0 2px;
+      border-radius: 3px;
+      font: {
+        family: $font-karla;
+        size: 12px;
+        weight: bold;
+      }
+      &:after{
+        display: none;
+      }
+    }
+  }
+/*listing gallery*/
+  .lSSlideWrapper.usingCss .lSFade>*.active{
+    opacity: 1 !important;
+  }
+  .bx-controls-direction{
+    a{
+      width: 20px;
+      height: 20px;
+      top: auto;
+      bottom: 10px;
+      &:before{
+        font-size: 8pt;
+        line-height: 21px;
+      }
+    }
+    .bx-prev{
+      left: auto;
+      right: 31px;
+      border-radius: 4px 0 0 4px;
+    }
+    .bx-next{
+      border-radius: 0 4px 4px 0;
+    }
+  }
+  .wpl-slider-bx-pager-wp{
+    background: transparent;
+    right: auto;
+    left: 10px;
+    bottom: 10px;
+    top: auto;
+    padding: 6px 0;
+    a{
+      display: none;
+    }
+  }
+  .wpl-slider-bx-img-count{
+    border-radius: 4px;
+    font-size: 13px;
+    background: rgba($co-0,.7);
+    padding: 4px 5px 4px 30px;
+    margin: -8px -10px -8px 0;
+  }
+  .wpl_sort_options_container {
+    margin: 30px auto 0;
+    border-bottom: none;
+  }
+  .wpl_property_listing_list_view_container {
+    .wpl-save-search-wp, .wpl-rss-wp {
+      display: none;
+    }
+  }
+}/*End Property listing container*/
+
+/*Hover animation*/
+.wpl_property_listing_container:not(.wpl-prp-disable-image-hover) {
+  .wpl_prp_top {
+    .wpl_prp_top_boxes.back {
+      transform: none;
+      .view_detail {
+        background: transparent !important;
+        text-indent: -9999px;
+      }
+    }
+  }
+
+    .wpl_prp_cont:not(.row_box){
+      &:hover {
+        border-bottom-color: darken($co-2,3%);
+      .wpl_prp_top_boxes {
+        &.front {
+          transform: none;
+          position: relative;
+          .wpl_gallery_image, .no_image_box {
+            @include transform(scale(1));
+            opacity: .5;
+          }
+        }
+        &.back {
+          transform: none;
+          opacity: 1;
+        }
+      }
+      .wpl_prp_bot .wpl_prp_desc {
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+  }
+  .wpl_prp_cont.row_box {
+    .wpl_prp_top:hover {
+      .front {
+        transform: none;
+        position: relative;
+        .wpl_gallery_image, .no_image_box {
+          @include transform(scale(1));
+          opacity: .5;
+        }
+      }
+      .back {
+        opacity: .7;
+        z-index: 999;
+        .view_detail {
+          text-indent: 0;
+        }
+      }
+    }
+  }
+}
+.wpl-prp-disable-image-hover.wpl_property_listing_container {
+  .wpl_prp_cont .wpl_gallery_image{
+    transform: none;
+  }
+}
+/*End Hover animation*/
+
+/*Columns count*/
+.wpl_property_listing_listings_container{
+  /*4 columns*/
+  &.wpl-large-up-4{
+    .wpl_prp_listing_icon_box div {
+      font-size: 13px;
+    }
+    .wpl_prp_cont.wpl_prp_cont_old .wpl_prp_bot{
+      padding-top: 10px;
+    }
+  }
+  /*6 columns*/
+  &.wpl-large-up-6{
+    .wpl_prp_listing_icon_box div {
+      font-size: 12px;
+    }
+    .wpl_prp_cont.wpl_prp_cont_old .wpl_prp_bot{
+      padding-top: 10px;
+    }
+  }
+}

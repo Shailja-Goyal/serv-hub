@@ -1,0 +1,134 @@
+/*!
+ * Testimonial Widget Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.re-testimonial 
+{
+	
+	.re-testimonial-container
+	{
+		border:1px solid $co-2;
+	    padding: 40px;
+	    border-radius: 5px;
+	    background: $co-1;
+	}
+	.re-client-name
+	{
+		color: $text-color2;
+		display:block;
+		text-align:center;
+
+	}
+	.re-testimonial-content
+	{
+		font-size: 16px;
+    	text-align: center;
+    	margin-bottom:10px;
+    	color: $co-8;
+	}	
+	.re-testimonial-thumb
+	{
+        display:block;
+        margin-bottom:30px;
+        img
+        {
+        	display:block;
+        	margin:auto;
+        	max-width:200px;
+        }	
+	}
+	.second-part
+	{
+		display:none;
+	}
+	.re-carousel-items
+	{
+		padding-top: 10px !important;
+		padding-bottom: 10px !important;
+	}
+	&.re-col-md-12
+	{
+		.re-testimonial-thumb
+		{
+			float:left;
+		}
+	}
+}
+.re-carousel
+{
+	.slick-slide
+	{
+		padding:0 10px;
+	}
+	.slick-arrow
+	{
+		display: inline-block;
+	    border-radius: 50%;
+	    font-size: 0;
+	    height: 45px;
+	    width: 45px;
+	    position: absolute;
+	    top: calc(50% - 20px);
+	    border-color:$co-3;
+	    transform: rotate(-90deg);
+	    cursor: pointer;
+	    @include for-all-non-desktop-devices {
+	    	display:none !important;
+	    }
+	    &:after
+	    {
+	    	font-family:$font-sesame;
+	    	font-size: 20px;
+	    	line-height: 30px;
+	    	font-size: 22px;
+	    }
+	    &.slick-prev
+	    {
+	    	left: -65px;
+	    	&:after
+	    	{
+	    		content: $re-icon-arrow-up;
+	    	}
+	    	
+	    }
+	     &.slick-next
+	    {
+	    	right: -65px;
+	    	&:after
+	    	{
+	    		content: $re-icon-arrow-down;
+	    		line-height: 35px;
+	    	}
+	    }
+	}
+	.slick-dots
+	{
+		text-align:center;
+		margin-top: 50px;
+		li
+		{
+			display:inline-block;
+			margin:0 5px;
+			button
+			{
+				border: 0;
+			    border-radius: 100%;
+			    font-size: 0;
+			    width: 10px;
+			    height: 10px;
+			    display: block;
+			    padding: 0;
+			    background-color: $co-19;
+			}
+			&.slick-active
+			{
+				button
+				{
+					background-color:$secondary-color;
+				}
+			}
+		}
+	}
+}
+

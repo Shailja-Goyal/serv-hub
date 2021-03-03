@@ -1,0 +1,114 @@
+/*!
+ * SCSS Mixins and Media Queries
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+ 
+@mixin respond-to($media){
+  @media #{$media}{
+    @content
+  }
+}
+
+// For Small Phone ( Portrait and Landscape )
+@mixin for-small-phone{
+  @include respond-to($small-phone){
+    @content;
+  }
+}
+
+// For Phone ( Portrait and Landscape )
+@mixin for-phone{
+  @include respond-to($phone){
+    @content;
+  }
+}
+
+// For Tablet( Portrait Only )
+@mixin for-tablet{
+  @include respond-to($tablet-portrait){
+    @content;
+  }
+}
+
+// For Tablet ( Tablet and Portrait Desktop  )
+@mixin for-tablet-land{
+  @include respond-to($tablet-landscape-desktop){
+    @content;
+  }
+}
+
+// For all non large desktop devices ( Large Desktop  )
+@mixin for-all-non-desktop-devices{
+  @include respond-to($all-non-desktop-devices){
+    @content;
+  }
+}
+
+// For landscape and desktop
+@mixin for-land-desktop{
+  @include respond-to($landscape-desktop){
+    @content;
+  }
+}
+
+// For Desktop ( Large Desktop  )
+@mixin for-desktop{
+  @include respond-to($large-desktop){
+    @content;
+  }
+}
+
+// For All non mobile and Tablet ( Large Desktop  )
+@mixin for-all-non-mobile-tablet{
+  @include respond-to($all-non-mobile-tablet){
+    @content;
+  }
+}
+
+// For Retina Desplay ( Large Desktop  )
+@mixin for-retina{
+  @include respond-to($retina){
+    @content;
+  }
+}
+
+// Calc
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+//Transform
+@mixin transform($rotate){
+  -webkit-transform: $rotate;
+  -moz-transform: $rotate;
+  -o-transform: $rotate;
+  -ms-transform: $rotate;
+  transform: $rotate;
+}
+
+//Transition
+@mixin transition($property1,$property2){
+  -webkit-transition: $property1,$property2;
+  -moz-transition: $property1,$property2;
+  -o-transition: $property1,$property2;
+  transition: $property1,$property2;
+}
+
+//Placeholder
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color !important;
+  }
+  &:-moz-placeholder {
+    color: $color !important;
+  }
+  &::-moz-placeholder {
+    color: $color !important;
+  }
+  &:-ms-input-placeholder {
+    color: $color !important;
+  }
+}

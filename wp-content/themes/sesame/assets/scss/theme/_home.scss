@@ -1,0 +1,75 @@
+/*!
+ * Theme Homepage styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+
+body.home
+{
+  .re-page-title
+  {
+    display: none;
+  }
+}
+.re-relative
+{
+  position: relative;
+}
+.wpl-search-float
+{
+  //position: absolute;
+  //bottom: 100px;
+  width:100%;
+  left: 0;
+  @include for-tablet
+  {
+    position: static;
+  }
+  & > .wpl-search-container
+  {
+    @include border-radius(5px 5px 0 5px);
+    @include box-shadow(0px 0px 5px rgba(0,0,0,0.3));
+    background: $co-1;
+    padding: 0;
+    border: 0;
+    @extend .re-container;
+    position: relative;
+  }
+  .wpl_search_from_box_top
+  {
+    margin: 0;
+    padding: 10px 5px 0 5px;
+  }
+  .wpl_search_from_box_bot
+  {
+    margin:0;
+    padding: 10px;
+    border-top: 1px solid $co-2;
+  }
+  .more_search_option
+  {
+    @include border-radius(0 0 5px 5px);
+    background: $co-1;
+    right: 0;
+    left: auto;
+    bottom: -25px;
+    font-style: normal;
+    font-size: 12px;
+    width: auto;
+  }
+}
+
+.re-home-title
+{
+  @include text-shadow(0px 0px 5px rgba(0,0,0,0.3));
+  color:$co-1;
+  .subtitle
+  {
+    font-size: 1.3em;
+  }
+  .title
+  {
+    font-size: 3em;
+  }
+}
+

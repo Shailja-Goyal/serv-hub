@@ -1,0 +1,361 @@
+/*!
+ * WPL Featured Properties and List Carousel widget
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.wpl_carousel_container {
+  .simple_list.wpl-plugin-owl {
+    //margin-top: 65px;
+
+    li{
+      border-radius: 5px;
+      background: darken($co-1,3%);
+      box-shadow: none;
+    }
+
+    .left_section, .right_section {
+      width: 50%;
+      display: block;
+      float: left;
+      @include for-tablet{
+        width: 100%;
+      }
+    }
+
+    .left_section{
+      span, img{
+        width: 100% !important;
+        height: auto !important;
+      }
+      span:hover{
+        &:after{
+          display: none;
+        }
+      }
+      img{
+        border-radius: 5px 0 0 5px;
+      }
+    }
+    .right_section {
+      padding: 30px 40px 20px 40px;
+
+      .title{
+        font: {
+          family: $font-montserrat;
+          size: 30px;
+          weight: bold;
+        }
+        a{
+          color: $co-18;
+        }
+      }
+
+      .location{
+        text-transform: uppercase;
+        color: $text-color1;
+        line-height: 13px;
+        padding: 15px 0 20px;
+        font:{
+          family: $font-montserrat;
+          size: 13px;
+        }
+        &:before{
+          content: '\e90d';
+          color: $link-color;
+          vertical-align: middle;
+          padding-right: 5px;
+          font: {
+            family: $font-sesame;
+            size: 15px;
+          }
+        }
+      }
+
+      .description{
+        color: $co-6;
+        line-height: 20px;
+        min-height: 80px;
+        font: {
+         family: $font-karla;
+          size: 15px;
+        }
+        @include for-tablet{
+          min-height: 100%;
+        }
+      }
+
+      .wpl_icon_box{
+        margin: 25px 0;
+        padding: 5px 0;
+        border: 1px solid $co-13;
+        border-width: 1px;
+
+        div{
+          display: inline-block;
+          width: 24%;
+          border-right: 1px solid darken($co-2,3%);
+          margin: 0;
+          padding: 9px 0;
+          color: $text-color1;
+          box-sizing: border-box;
+          text-align: center;
+          font:{
+            family: $font-karla;
+            size: 16px;
+            weight: bold;
+          }
+          &:last-child{
+            border-color: transparent;
+          }
+          &:before{
+            display: inline-block;
+            padding-right: 5px;
+            vertical-align: bottom;
+            color: $co-6;
+            font:{
+              size: 20px;
+              family: $font-sesame;
+              weight: 400;
+            }
+          }
+        }
+        .bedrooms:before{
+          content: $re-icon-Bedroom;
+        }
+        .bathrooms:before{
+          content: $re-icon-Bathroom;
+        }
+        .living_area:before {
+          content: $re-icon-SQFT;
+        }
+        .parking:before{
+          content: $re-icon-parking;
+        }
+      }
+
+      .price{
+        color: $text-color1;
+        float: left;
+        font: {
+          family: $font-karla;
+          size: 24px;
+          weight: bold;
+        }
+      }
+
+      .more_info{
+        position: static;
+        float: right;
+        text-indent: 0;
+        color: $co-1;
+        width: auto;
+        height: auto;
+        background: $link-color;
+        padding: 12px 30px;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 4px;
+        font:{
+          family: $font-montserrat;
+          size: 13px;
+        }
+        &:after{
+          display: none;
+        }
+      }
+
+    }
+
+    .owl-controls {
+      top: -80px;
+      left: auto;
+      height: auto;
+      width: auto;
+      right: 0;
+      @include for-phone{
+        top:-75px;
+      }
+      .owl-nav {
+        .owl-prev, .owl-next {
+          background: transparent;
+          border: 2px solid lighten($co-7, 2%);
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          border-radius: 50%;
+          font: {
+            size: 15px;
+            family: $font-wpl;
+          }
+          &:before {
+            color: lighten($co-7, 2%);
+            vertical-align: top;
+            line-height: 40px;
+            display: inline-block;
+            font-weight: bold;
+          }
+        }
+        .owl-prev {
+          left: auto;
+          right: 70px;
+          &:before {
+            content: '\e656';
+          }
+        }
+        .owl-next {
+          right: 0;
+          &:before {
+            content: '\e657';
+          }
+        }
+      }
+    }
+
+  }
+}
+
+/*Featured properties - Multi images*/
+
+.wpl-plugin-owl.wpl-carousel-multi-images{
+  //margin-top: 65px;
+
+  .wpl-carousel-item{
+    border: none;
+  }
+  .owl-item{
+    //padding: 0 20px;
+  }
+  .owl-stage-outer
+  {
+    //margin: 0 -20px;
+  }
+  .wpl-carousel-item {
+    &:hover{
+      .wpl-carousel-top a{
+        opacity: 1;
+      }
+    }
+    .wpl-carousel-top{
+      position: relative;
+      overflow: hidden;
+
+      a{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 220px;
+        display: block;
+        background: rgba($co-1,.8);
+        text-align: center;
+        color: $co-1;
+        z-index: 1;
+        font-size: 1.7em;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }
+
+    }
+
+    .title {
+      padding: 10px 0;
+
+      .main-title {
+        position: static;
+        background: transparent;
+        color: $co-0;
+        text-transform: uppercase;
+        text-align: left;
+        margin-bottom: 10px;
+        font: {
+          family: $font-montserrat !important;
+          size: 18px !important;
+          weight: normal !important;
+        }
+      }
+      .address
+      {
+        font-size: 14px;
+        font-weight: normal;
+        font-family: $font-karla;
+      }
+
+    }
+  }
+  .wpl_prp_listing_icon_box
+  {
+    margin: 10px 0;
+    border-right: 1px solid $co-2;
+    display: flex;
+    & > div
+    {
+      padding: 10px;
+      border: 1px solid $co-2;
+      border-right:0;
+      margin: 0;
+      float: left;
+      flex: 1;
+      &:after
+      {
+        font-family: $font-sesame;
+        display: inline;
+        font-size: 15px;
+        margin-left: 10px;
+        top: auto;
+        line-height: 22px;
+      }
+    }
+    .bedrooms:after{
+      content: $re-icon-Bedroom;
+    }
+    .bathrooms:after{
+      content: $re-icon-Bathroom;
+    }
+    .built_up_area {
+      span{
+        font-size: 12px;
+        color: $co-6;
+        text-transform: lowercase;
+      }
+      &:after {
+        content: $re-icon-SQFT;
+      }
+    }
+    .parking:after{
+      content: $re-icon-parking;
+    }
+  }
+  .wpl-carousel-bot
+  {
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid $co-2;
+    font-weight: bold;
+  }
+  .owl-controls .owl-nav
+  {
+    & > div
+    {
+      @include border-radius(50%);
+      font-size: 20px !important;
+      border: 2px solid $co-2;
+      padding: 10px !important;
+      &:hover
+      {
+        background-color: $co-2;
+      }
+    }
+    .owl-prev
+    {
+      left: -60px;
+    }
+    .owl-next
+    {
+      right: -60px;
+    }
+  }
+}

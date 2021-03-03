@@ -1,0 +1,394 @@
+/*!
+ * WPL Profile Wizard Syles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.wpl_addon_membership .re-page-title{
+  .re-entry-title, span {
+    display: none;
+  }
+}
+
+.wpl_addon_membership_container {
+
+  &.wpl_membership_wrap{
+    border: none;
+  }
+
+  .wpl_dashboard_header,.wpl_memberships_label,.wpl_membership_addon_label {
+    background: transparent;
+    text-transform: uppercase;
+    color: $main-color;
+    line-height: 2em;
+    font: {
+      family: $font-montserrat;
+      size: 26px;
+      weight: bold;
+    }
+    &:before {
+      content: '';
+      width: 40px;
+      height: 5px;
+      background: $secondary-color;
+      display: block;
+    }
+  }
+}
+
+#wpl_dashboard_main_content .wpl-wp.profile-wp .panel-wp {
+  border: 2px solid darken($co-1,5%);
+  padding: 20px;
+  @include for-phone{
+    padding: 10px;
+  }
+
+  h3{
+    display: none;
+  }
+
+  .panel-body {
+
+    .finilize-btn {
+      position: absolute;
+      top: -106px;
+      width: 110px !important;
+      padding: 0;
+      right: 50px;
+      @include for-tablet-land {
+        right: auto;
+        left: 0;
+      }
+      @include for-tablet {
+        right: auto;
+        left: 0;
+      }
+      @include for-phone{
+        top: -5px;
+        right: 0;
+        left: auto;
+        margin-right: 0;
+      }
+      button.wpl-button {
+        height: 35px;
+        padding: 0 10px;
+        text-align: left;
+        color: $co-1;
+        background: $co-9 !important;
+        border: none;
+        display: block;
+        width: 100%;
+        line-height: 35px;
+        font: {
+          size: 15px;
+          family: $font-karla;
+          weight: 500;
+        }
+        &:hover {
+          @include transition(500ms, background);
+          text-decoration: none;
+          background: darken($co-9, 10%) !important;
+        }
+        span {
+          padding: 0;
+          float: left;
+        }
+        &:after {
+          content: $re-icon-doubletick !important;
+          font: {
+            size: 20px;
+            family: $font-sesame !important;
+          }
+          line-height: 33px;
+        }
+      }
+
+    }
+
+    .wpl_listing_field_container {
+      max-width: 100% !important;
+      margin-bottom: 30px;
+
+      label{
+        float: none;
+        text-align: left !important;
+        color: $co-8;
+        display: block;
+        width: auto;
+        font: {
+          family: $font-montserrat;
+          size: 14px;
+          weight: bold;
+        }
+      }
+      .chosen-container{
+        width: 100% !important;
+      }
+
+      input[type="text"], select, .chosen-single, textarea, input[type="number"] {
+        width: calc(100% - 250px) !important;
+        border: 1px solid rgba($co-0,.1);
+        border-bottom: none;
+        border-radius: 4px;
+        box-shadow: 0 2px 0 rgba($co-0,.1);
+        height: 40px;
+        padding-left: 15px;
+        color: $text-color1;
+        font: {
+          size: 15px;
+          family: $font-montserrat;
+        }
+        @include for-tablet{
+          width: 100% !important;
+        }
+      }
+
+      textarea{
+        height: 90px;
+        width: 100% !important;
+      }
+
+      .chosen-single {
+        span {
+          line-height: 40px;
+          margin-right: 41px;
+        }
+        div {
+          right: 15px;
+          b {
+            background: none;
+            &:after {
+              content: "\e68c";
+              color: $co-5;
+              line-height: 40px;
+              font: {
+                family: $font-wpl;
+                size: 14px;
+              }
+            }
+          }
+        }
+      }
+
+      /*Profile images*/
+      &.prow-upload{
+        top: 0;
+        right: 0;
+        min-width: 225px;
+        &:hover{
+          .file-upload-wp{
+            .wpl-button {
+              z-index: 2;
+            }
+          }
+        }
+        label{
+          @include for-tablet{
+            float: none !important;
+          }
+        }
+      }
+
+      .file-upload-wp{
+        background: url("../img/upload_bg.png") no-repeat;
+        width: 100%;
+        height: 120px;
+        position: absolute;
+        right: 0;
+        @include for-tablet {
+          position: relative;
+          float: none !important;
+          margin: 0 auto;
+          width: 225px;
+        }
+        .wpl-button{
+          @include calc(top, "50% - 15px");
+          @include calc (left, "50% - 75px");
+          position: absolute;
+          width: 150px;
+          background: darken($co-1,5%);
+          border-radius: 4px;
+          border: 1px solid $co-3;
+          padding: 0 5px;
+          height: 25px;
+          text-align: left;
+
+          span{
+            color: $co-14;
+            height: 100%;
+            line-height: 25px;
+            display: block;
+            cursor: pointer;
+            font: {
+              family: $font-montserrat;
+              size: 13px;
+              weight: normal;
+            }
+            &:after{
+              content: "\e911";
+              color: $co-11;
+              font: {
+                family: $font-wpl;
+                size: 16px;
+              }
+              float: right;
+            }
+          }
+          &:hover{
+            background: $co-11;
+            border-color: $co-11;
+            span{
+              color: $co-1;
+              &:after{
+                color: $co-1;
+              }
+            }
+          }
+        }
+      }
+
+      .upload-preview-wp {
+        margin: 0 !important;
+
+        .upload-preview {
+          min-height: 200px;
+          min-width: 200px;
+          width: 100%;
+          display: block;
+          line-height: 200px;
+          text-align: center;
+          background: $co-1;
+          img {
+            max-height: 265px !important;
+            max-width: 225px !important;
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          .preview-remove-button {
+            position: static;
+            width: auto;
+            height: auto;
+            display: block;
+            line-height: normal;
+            background: transparent;
+            @include for-tablet {
+              width: 185px;
+              height: 30px;
+              position: static !important;
+              margin: 0 auto;
+              display: block;
+              background: transparent;
+              box-shadow: none;
+            }
+            .action-btn {
+              display: inline-block !important;
+              width: 25px !important;
+              height: 25px !important;
+              color: $co-14;
+              background: darken($co-1, 5%);
+              border-radius: 4px;
+              border: 1px solid $co-3;
+              padding: 0 5px;
+              text-align: left !important;
+              //position: absolute !important;
+              //top: 50%;
+              //left: calc(50% - 75px);
+              line-height: 25px !important;
+              font: {
+                family: $font-montserrat;
+                size: 13px;
+                weight: normal;
+              }
+              @include for-tablet {
+                top: auto;
+                bottom: 0;
+              }
+              &:after {
+                content: $re-icon-trash-o !important;
+                font-family: $font-sesame !important;
+                float: right;
+                color: $co-14 !important;
+                font-size: 16px !important;
+              }
+              &:hover {
+                background: $co-11;
+                border-color: $co-11;
+                &:after {
+                  color: $co-1 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.prow-upload#wpl_listing_field_container913 {
+        top: 335px;
+      }
+
+      &.prow-separator{
+        width: 100%;
+        margin: 35px 0;
+        &:after {
+          content: '';
+          height: 2px;
+          border-bottom: 2px dashed $co-13;
+          padding: 0;
+          display: block;
+          width: 100%;
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+      }
+
+      .wpl_c_sex + .chosen-container {
+        position: relative;
+        .chosen-single {
+          padding-left: 40px;
+          &:before {
+            content: '\f222';
+            font:{
+              family: $font-sesame;
+              size: 30px;
+            }
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 10px;
+            color: $co-7;
+          }
+        }
+      }
+
+      .location-wp{
+        .location-part{
+          width: 24%;
+          display: inline-block;
+          @include for-tablet-land{
+            width: 49%;
+          }
+          @include for-tablet{
+            width: 100%;
+          }
+          .chosen-container,select,input[type="text"]{
+            width: 90% !important;
+            min-width: 120px;
+            @include for-phone{
+              width: 100% !important;
+            }
+          }
+          .chosen-single{
+            width: 100% !important;
+          }
+        }
+        .value-wp{
+          float: none !important;
+        }
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,626 @@
+/*!
+ * WPL Search Widget Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.wpl_search_from_box
+{
+  border:0;
+  padding: 0;
+  .wpl_search_field_locations:not(.simple_type)
+  {
+    input[class*="_location_text"]
+    {
+      margin-top: 20px;
+    }
+  }
+  input[class*="_location_text"]
+  {
+    @include border-radius(3px);
+    min-width: 350px;
+  }
+  input[type="text"],input[type="number"],input[type="date"],select,textarea
+  {
+    @include border-radius(3px);
+    border: 1px solid $co-2;
+    border-bottom-width: 2px;
+    padding: 0 10px;
+    width:100%;
+  }
+  input[type="number"]{
+    width:initial;
+  }
+  .chosen-container-single .chosen-single
+  {
+    @include border-radius(3px);
+    border: 1px solid $co-2;
+    border-bottom-width: 2px;
+    padding: 0 10px;
+  }
+  .wpl_search_from_box_top
+  {
+    label,.wpl-gen-form-label
+    {
+      display: block;
+      font-family: $font-montserrat;
+      font-size: 12px;
+      color: $main-color;
+      text-transform: uppercase;
+      line-height: 20px;
+    }
+    .wpl_search_field_suggestion_search{
+      padding-top: 20px;
+    }
+    .wpl_search_field_container
+    {
+      @include for-tablet
+      {
+        padding: 0 10px;
+      }
+      @include for-phone
+      {
+        float: none;
+      }
+      &.minmax_type
+      {
+        label
+        {
+          display: none;
+          &:first-of-type
+          {
+            display: block;
+          }
+        }
+        input[type=text]{
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  .more_search_option
+  {
+    border:0;
+    left: auto;
+    right: 0;
+  }
+  .search_submit_box
+  {
+    @include border-radius(2px);
+    margin-top: 20px;
+    @include for-tablet
+    {
+      float: right;
+      margin-top: 20px !important;
+    }
+    @include for-phone
+    {
+      margin:10px !important;
+    }
+    &:after
+    {
+      font-family: 'sesame';
+      content:'\e90b';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      text-align: center;
+      font-size: 25px;
+      z-index: 1;
+    }
+    .wpl_search_widget_submit
+    {
+      font-size: 0;
+      position: relative;
+      z-index: 2;
+      cursor:pointer;
+      @include for-phone
+      {
+        width:100%;
+      }
+    }
+  }
+  .wpl-total-results-after{
+    margin-top: 20px;
+  }
+  .wpl_search_reset
+  {
+    margin-top: 20px;
+    border-radius: 2px;
+    @include for-tablet
+    {
+      float: right;
+      margin-top: 20px !important;
+    }
+    @include for-phone
+    {
+      margin:10px !important;
+    }
+  }
+  .wpl_dashboard_links_container{
+    a{
+      margin-top: 20px;
+      border-radius: 2px;
+    }
+  }
+  &.advanced {
+    .wpl_search_from_box_top {
+      padding: 10px 5px;
+      .wpl_search_widget_links {
+        height: auto;
+        float: right;
+      }
+      .wpl_search_field_container:not(.radios_type) label, .wpl_search_field_container:not(.radios_type) .wpl-gen-form-label {
+        display: none;
+      }
+      .wpl_search_field_container, .search_submit_box,
+      .wpl_search_reset, .wpl_dashboard_links_container a,
+      .wpl_search_field_locations:not(.simple_type) input[class*="_location_text"] {
+        margin-top: 0;
+      }
+      .search_submit_box {
+        background: none;
+        color: $secondary-color;
+        &:hover {
+          background: none;
+          &:after {
+            transform: scale(1.1);
+            transition: 1s;
+          }
+        }
+        &:after {
+          content: '\e90a';
+        }
+        .wpl_search_widget_submit {
+          color: $secondary-color;
+        }
+      }
+      .wpl_search_field_container.minmax_type label:first-of-type {
+        display: none;
+      }
+    }
+    .wpl_search_from_box_bot .wpl_search_field_container:not(.yesno_type):not(.checkbox_type):not(.wpl_search_field_separator):not(.wpl_search_field_container_300)>label:first-of-type,
+    .wpl_search_from_box_bot .wpl_search_field_container:not(.yesno_type):not(.checkbox_type):not(.wpl_search_field_separator):not(.wpl_search_field_container_300)>.wpl-gen-form-label:first-of-type {
+      color: $main-color;
+    }
+    .wpl_search_from_box_bot .wpl_search_field_container.radios_type label {
+      font-size: 15px;
+    }
+    .wpl_search_field_container:not(.wpl_search_field_separator), .search_submit_box,
+    .wpl_search_reset, .wpl_dashboard_links_container {
+      float: none;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .wpl_search_field_container {
+      margin-top: 0;
+      &.minmax_type>select:not([id*="_unit"]),
+      &.minmax_type>.chosen-container:not([id*="_unit"]),
+      &.minmax_type>input[type="text"],
+      &.minmax_type>input[type="number"],
+      &.minmax_selectbox_type>select:not([id*="_unit"]),
+      &.minmax_selectbox_type>.chosen-container:not([id*="_unit"]),
+      &.minmax_selectbox_type>input[type="text"],
+      &.minmax_selectbox_type>input[type="number"] {
+        max-width: calc(50% - 6px) !important;
+        margin: 0 3px;
+      }
+      &>[id*="unit_"] {
+        margin: 0 5px 0 0;
+        max-width: 25% !important;
+      }
+      &.minmax_type > input {
+        width: auto;
+      }
+      &.minmax_type [id*="unit_"] ~ input {
+        max-width: calc(75%/2 - 6px);
+      }
+      &.minmax_slider_type, &.radios_any_type, &.radios_type {
+        vertical-align: bottom;
+      }
+      &.minmax_selectbox_type .wpl_search_slider_container > * {
+        margin: 0 3px;
+      }
+      &.radios_type label{
+        display: inline-block;
+      }
+      input[class*="_location_text"] {
+        min-width: 200px;
+      }
+      input[type="text"], input[type="number"],
+      .wpl_search_widget_location_textsearch {
+        color: #000;
+        font-size: 15px;
+        font-family: $content_font_family;
+        border-width: 0 0 1px;
+        border-color: #000;
+        border-radius: 0;
+        padding: 0;
+        &::placeholder, &::-moz-placeholder, &::-webkit-input-placeholder {
+          color: #000;
+          font-size: 15px;
+          font-family: $content_font_family;
+          opacity: 1;
+        }
+        &:focus {
+          outline-color: #7a7a7a;
+          padding: 0 0 0 5px;
+        }
+      }
+      .chosen-search input {
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 2px #7a7a7a;
+          border-bottom: 0;
+        }
+      }
+      .chosen-container-single .chosen-default,
+      .chosen-container-single .chosen-single {
+        color: #000;
+        font-size: 16px;
+        font-family: $content_font_family;
+        border-width: 0 0 1px;
+        border-color: #000;
+        border-radius: 0;
+        padding: 0 10px 0 0;
+      }
+      &[id*="_search_field_container_8"] .chosen-container:after,
+      &[id*="_search_field_container_9"] .chosen-container:after {
+        content: none;
+      }
+    }
+    &>.wpl-search-container {
+      width: fit-content;
+      @include border-radius(0);
+      padding: 0 1% 0 3%;
+      position: relative;
+      box-shadow: none;
+    }
+    
+    // Listing type tabs on float search
+    .wpl_search_from_box_top .wpl_search_field_container.wpl_search_field_listings.radios_type &,
+    .wpl_search_from_box_top .wpl_search_field_container.wpl_search_field_listings.radios_any_type & {
+      padding-top: 50px;
+    }
+    .wpl_search_from_box_top .wpl_search_field_container.wpl_search_field_listings.radios_type,
+    .wpl_search_from_box_top .wpl_search_field_container.wpl_search_field_listings.radios_any_type {
+      position: absolute;
+      top: -50px;
+      left: 3%;
+      width: auto;
+      margin: 0;
+      background: #fff;
+      padding: 2px 0 5px;
+      @media(max-width: 480px) {
+        position: static;
+        padding: 0 10px;
+      }
+      label {
+        display: inline-block;
+        vertical-align: middle;
+        border-right: 1px solid #000;
+        padding: 1px 13px;
+        margin: 0;
+        font-size: 15px;
+        color: #000;
+        cursor: pointer;
+        font-family: $content_font_family;
+        text-transform: capitalize;
+        @media(max-width: 480px) {
+          width: 100%;
+          border-right: 0;
+          border-bottom: 1px solid #000;
+          padding: 5px;
+        }
+        &:first-child {
+          display: none;
+        }
+        &:last-of-type {
+          border-right: 0;
+        }
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+      input {
+        display: none;
+        &:checked+label {
+          color: $secondary-color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+
+.re-search-sidebar
+{
+  background: darken($co-1,2%);
+  border-bottom: 2px solid darken($co-1,4%);
+  padding: 20px 0 10px 0;
+  .widget-title
+  {
+    display: none;
+    margin-bottom: 10px ;
+  }
+  .wpl_search_from_box,.wpl_search_from_box_top
+  {
+    margin: 0;
+  }
+  .more_search_option
+  {
+    @include border-radius(0 0 5px 5px);
+    font-style: initial;
+    background-color: darken($co-1,4%);
+    line-height: 20px;
+    font-size: 12px;
+    bottom: -30px;
+    width: auto;
+    &:after
+    {
+      font-size: 10px;
+    }
+
+  }
+}
+
+/*Save search + RSS*/
+.wpl_search_widget_links{
+  display: flex;
+  //flex-flow: column;
+  float: left;
+  height: 45px;
+  margin: 20px 5px 0;
+  @include for-tablet
+  {
+    float: right;
+  }
+  @include for-phone{
+    display: block;
+  }
+  .wpl-save-search-wp,.wpl-rss-wp{
+    position: static !important;
+    margin: 0;
+    @include for-phone{
+      display: inline-block;
+    }
+    a {
+      border: none;
+      background: $co-19;
+      border-radius: 3px;
+      padding: 0 5px;
+      height: 35px;
+      width: 35px !important;
+      line-height: 35px;
+      box-sizing: border-box;
+      text-align: center;
+      @include for-phone{
+        padding: 5px 7px;
+      }
+      span {
+        display: none;
+      }
+      &:after{
+        margin: 0;
+        color: $main-color;
+        font-size: 14px;
+        @include for-phone{
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+      &:hover{
+        background: $co-19;
+        &:after {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  .wpl-save-search-wp a{
+    &:after{
+      content: '\e002';
+      font-family: $font-wpl;
+    }
+  }
+  .wpl-save-search-wp+.wpl-rss-wp{
+    //margin-top: -5px;
+    margin-left: 10px;
+    @include for-phone{
+      margin-top: 0;
+    }
+  }
+
+  &.re-wpl_links_text{
+    .wpl-save-search-wp,.wpl-rss-wp{
+      width: 70px;
+      height: 21px;
+      @include for-phone{
+        width: auto;
+        height: auto;
+      }
+      a{
+        width: 100% !important;
+        background: $co-1;
+        border: 1px solid $co-2;
+        padding: 3px 5px;
+        span{
+          display: inline-block;
+          float: left;
+          text-transform: uppercase;
+          color: $co-20;
+          line-height: 13px;
+          margin: 0;
+          font:{
+            style: normal;
+            size: 13px;
+            weight: bold;
+          }
+          @include for-phone{
+            font-size: 16px;
+            line-height: 18px;
+            padding-right: 10px;
+          }
+        }
+        &:after{
+          float: right;
+          color: $co-20;
+        }
+      }
+      &:hover{
+        a {
+          background: $co-2;
+        }
+      }
+    }
+    .wpl-save-search-wp+.wpl-rss-wp{
+      margin-top: 3px;
+      a{
+        padding-top: 3px;
+      }
+    }
+  }
+}
+
+/*Advanced search*/
+.wpl-advanced-search-wp{
+  .container{
+    width: 1170px;
+    @include for-all-non-desktop-devices{
+      width: 900px;
+    }
+    @include for-tablet-land{
+      width: 700px;
+    }
+    @include for-tablet{
+      width: auto;
+    }
+  }
+  .realtyna-lightbox-title{
+    background: transparent;
+    border-bottom: 1px solid rgba($main-color,.12);
+    text-transform: uppercase;
+    color: $main-color;
+    height: 65px;
+    line-height: 45px;
+    padding: 10px 25px;
+    font:{
+      family: $font-montserrat;
+      weight: 700;
+      size: 18px;
+    }
+  }
+  .wpl-advanced-search-popup{
+    padding: 25px;
+  }
+
+  .wpl_search_field_container {
+    width: calc(20% - 6px);
+    @include for-phone{
+      width: 100%;
+      float: none;
+    }
+    select, input, .chosen-container, .chosen-container .chosen-single {
+      width: 100% !important;
+    }
+
+  }
+  .wpl_search_from_box_bot .wpl_search_field_container{
+    width: 20%;
+    @include for-tablet{
+      width: 50%;
+    }
+    @include for-phone{
+      width: 100%;
+      float: none;
+    }
+  }
+  .minmax_selectbox_plus_type{
+    .wpl_search_slider_container .chosen-container{
+      width: calc(100% - 45px) !important;
+    }
+  }
+  .minmax_selectbox_plus_type,.minmax_type{
+    .chosen-container[id*="unit"]{
+      width: 45px !important;
+      span{
+        margin: 0;
+      }
+    }
+  }
+  .minmax_type{
+    input{
+      width: 50% !important;
+    }
+    .chosen-container[id*="unit"]{
+      & + label + input{
+        width: calc(50% - 23px) !important;
+        &+label+input{
+          width: calc(50% - 23px) !important;
+        }
+      }
+    }
+  }
+  .wpl_search_widget_location_textsearch{
+    min-width: 100%;
+  }
+  .wpl_dashboard_links_container,.wpl-total-results-after{
+    margin-top: 20px;
+  }
+  .wpl-total-results-after{
+    @include for-phone{
+      float: none;
+    }
+  }
+  .wpl_search_widget_links{
+    display: none;
+  }
+
+  .wpl_search_from_box{
+    padding-top: 35px;
+    .wpl_search_from_box_top .wpl_search_reset{
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $co-13;
+      color: $co-14;
+      border-radius: 4px;
+      height: 30px;
+      transition: .3s;
+      font:{
+        family: $font-karla;
+        size: 15px;
+      }
+      &:after{
+        content: "\e6ad";
+      }
+      &:hover{
+        background: lighten($co-13,2%);
+      }
+    }
+  }
+  .jquery-checkbox-checked .mark:after{
+    color: $secondary-color;
+  }
+  .search_submit_box {
+    width: 24%;
+    margin-left: -12%;
+    min-width: 100px;
+    &:after {
+      display: none;
+    }
+    .wpl_search_widget_submit {
+      font-size: inherit;
+      padding: 0;
+      width: 100% !important;
+    }
+  }
+}
+.wpl-frontend-lightbox-wp .realtyna-lightbox-close-btn{
+  top: 20px;
+  right: 25px;
+  color: rgba($co-0,.3);
+}

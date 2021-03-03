@@ -1,0 +1,443 @@
+/*!
+ * WPL Profile Listing Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+ //@import "customizer/variables";
+.wpl-profile-listing-wp{
+
+  .wpl_sort_options_container{
+    border: none;
+  }
+
+  .wpl_profile_container {
+    border-bottom: none;
+
+    .wpl_profile_picture {
+      border-radius: 5px;
+      line-height: inherit;
+      height:auto;
+      padding: 0;
+      .front img,.no_image {
+        width: 100%;
+        @include transform(scale(1.12));
+        @include transition(opacity 0.35s, transform 0.35s);
+      }
+    }
+
+    .front {
+      position: relative;
+      z-index: 2;
+    }
+    .back
+    {
+      opacity: .5;
+      background: $main-color;
+      .view_properties
+      {
+        font:
+        {
+          family: $font-montserrat;
+          size: 21px;
+          weight: bold;
+        }
+        text-transform: uppercase;
+      }
+    }
+    .no_image{
+      font-size: 13px;
+    }
+
+    .wpl_profile_container_title{
+      @include for-phone{
+        padding-left: 0;
+      }
+      .title {
+        text-align: left;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $co-2;
+        margin-left: 5px;
+        font: {
+          size: 18px;
+          family: $font-montserrat;
+          weight: bold;
+        }
+        a {
+          color: $co-0 !important;
+        }
+      }
+        a[href*='mailto']{
+          text-align: left;
+          padding-left: 32px;
+          position: relative;
+          margin-top: 15px;
+          line-height: 30px;
+          left: auto;
+          &:after{
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: absolute;
+            top:0;
+            left: 0;
+            content: '\e910';
+            color: $text-color1;
+            text-align: center;
+            line-height: 30px;
+            font: {
+              family: $font-sesame;
+              size: 13px;
+            }
+          }
+          img{
+            vertical-align: middle;
+          }
+        }
+      .about{
+        position: absolute;
+        top: 10px;
+        left:0;
+        color: $co-1;
+        font-size: 14px;
+        width: 100%;
+        padding: 5px 10px;
+        z-index: 0;
+        height: 88px;
+        overflow: hidden;
+        line-height: 22px;
+        opacity: 0;
+        display: block;
+      }
+    }
+
+    ul{
+      width: 100%;
+      margin: 0;
+      border-bottom: 2px solid $co-2;
+      padding-bottom: 10px;
+      display: block;
+
+      li{
+        text-indent: 0;
+        float: none;
+        width: 100%;
+        height: auto;
+        color: $text-color1;
+        padding-left: 32px;
+        text-align: left;
+        line-height: 30px;
+        font: {
+          family: $font-karla;
+          size: 14px;
+        }
+
+        &:after{
+          background: transparent !important;
+          font-size: 14px;
+          color: $text-color1;
+        }
+        a{
+          position: static;
+        }
+        &.website{
+          a{
+            @include for-phone{
+              position: static;
+            }
+          }
+        }
+        &.phone:after{
+          content: '\e912';
+          font-family: $font-sesame;
+        }
+        &.mobile:after{
+          content: '\e911';
+          font-family: $font-sesame;
+        }
+        &.phone,&.mobile
+        {
+          & > span
+          {
+            display: none;
+          }
+        }
+      }
+    }
+    &:not(.row_box){
+      .wpl_profile_container_title{
+        padding-top: 15px;
+        margin-top: 5px;
+      }
+    }
+
+
+    &.row_box{
+      border: none;
+
+      .wpl_profile_picture{
+        width: 150px;
+        height: 150px;
+        line-height: normal;
+        @include for-phone{
+          width: 100%;
+          height: auto;
+        }
+        .front .no_image:before{
+          font-size: 150px;
+        }
+        .back .view_properties{
+          display: block;
+          font-size: 14px;
+        }
+      }
+
+      .about,.view_properties{
+        display: none;
+      }
+      ul{
+        @include calc(width,'100% - 150px');
+        padding-left: 10px !important;
+        min-height: 72px;
+        border-bottom: none;
+
+        li{
+          .phone-link,.mobile-link{
+            display: block;
+          }
+        }
+      }
+
+      .wpl_profile_container_title{
+        @include calc(width,'100% - 150px');
+        @include for-phone{
+          width: 100%;
+        }
+      }
+      .website,.fax{
+        display: none;
+      }
+    }
+
+  }
+  .wpl-row:not(.wpl-small-up-1) .wpl-column{
+    width: 50%;
+    @include for-tablet{
+      width: 100%;
+    }
+  }
+
+  .wpl-large-up-1{
+    .wpl_profile_container .wpl_profile_picture .front img{
+      width: auto;
+    }
+  }
+
+  .wpl-large-up-6{
+    .wpl_profile_picture{
+      height: 165px;
+    }
+    .website a{
+      word-wrap: break-word;
+    }
+    .front .no_image:before{
+      font-size: 160px;
+    }
+  }
+
+}/*End profile listing*/
+
+/*Hover animation*/
+.wpl-profile-listing-wp:not(.wpl-prp-disable-image-hover) {
+  .wpl_profile_picture {
+    .back {
+      transform: none;
+      .view_properties {
+        background: transparent !important;
+      }
+    }
+  }
+
+  .wpl_profile_container:hover {
+    .wpl_profile_picture {
+      .front {
+        transform: none;
+        position: relative;
+        background: transparent;
+        img, .no_image{
+          @include transform(scale(1));
+          opacity: .5;
+        }
+      }
+      .back {
+        transform: none;
+        opacity: 1;
+        z-index:1000;
+      }
+    }
+    &.row_box{
+      .wpl_profile_container_title,ul{
+        background: transparent;
+      }
+    }
+  }
+  .wpl_profile_container.row_box {
+    .wpl_profile_picture:hover {
+      .back {
+        opacity: .7;
+        z-index: 999;
+        .view_properties {
+          text-indent: 0;
+        }
+      }
+    }
+  }
+}
+/*Agent Carousel*/
+.wpl_agents_widget_container
+{
+  .wpl_profile_container
+  {
+    border-bottom: 0;
+    padding: 0 15px;
+    width: 25% !important;
+    margin: 0;
+    float: left;
+    @include for-tablet
+    {
+      float:none;
+      width:100% !important;
+    }
+    ul
+    {
+      display: block;
+      margin: 0;
+      text-align: left;
+      li
+      {
+        display: block !important;
+        text-indent: 0;
+        width: initial;
+        height: initial;
+        background: none !important;
+        float: none;
+        margin-bottom: 10px;
+        &:after
+        {
+          //display: none !important;
+          background: none;
+          font-size: 14px !important;
+          float: left;
+          color: $text-color1;
+          line-height: initial;
+          width: initial;
+          height: initial;
+        }
+        span,a
+        {
+          display: block !important;
+          text-indent: 0;
+          position: static;
+          font-size: 12px;
+          color:$text-color1;
+        }
+        & > a, & > span
+        {
+          margin-left: 20px;
+        }
+      }
+
+    }
+    .wpl_profile_picture
+    {
+      width:100% !important;
+      div
+      {
+        @include border-radius(0);
+        border:0;
+        box-shadow: none;
+      }
+
+    }
+    .wpl_profile_container_title
+    {
+      padding: 10px 0;
+      margin-bottom: 10px;
+      border-bottom: 2px solid $co-2;
+      .title
+      {
+        font-family: $font-montserrat;
+        font-size: 18px;
+        text-align: left;
+        text-transform: uppercase;
+      }
+      img
+      {
+        display: block;
+      }
+    }
+  }
+  &.advanced .wpl_profile_container {
+    width: 33.333% !important;
+    @media (max-width: 768px) {
+      width: 100% !important;
+    }
+    .wpl_profile_picture {
+      height: auto !important;
+      div.front {
+        position: unset;
+      }
+    }
+    .wpl_profile_container_title {
+      background: #fff;
+      text-align: left;
+      padding: 5px 10px;
+      margin: 15px auto;
+      border-left: 5px solid $main-color;
+      border-width: 0 0 0 5px;
+      .title {
+        color: $secondary-color;
+        font-weight: bold;
+        font-family: $title_font_family;
+        margin: 0;
+      }
+      .email {
+        color: $main-color;
+      }
+    }
+    ul {
+      padding-top: 0;
+      li {
+        display: none !important;
+        background: #fff !important;
+        border-radius: 0;
+        width: 40px;
+        height: 40px;
+        &.website, &.phone, &.mobile {
+          display: inline-block !important;
+        }
+        &:after {
+          color: $main-color;
+          font-size: 17px !important;
+          top: 10px;
+          left: 10px;
+          z-index: 9;
+        }
+        a {
+          font-size: 0;
+          width: initial;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          position: relative;
+          z-index: 10;
+          span {
+            font-size: 0;
+            width: initial;
+          }
+        }
+      }
+    }
+  }
+}
+

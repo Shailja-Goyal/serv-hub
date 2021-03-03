@@ -1,0 +1,222 @@
+/*!
+ * WPL Single Agent Page Styles
+ * Author UI Department of Realtyna Inc.
+ * Copyright 2019 Realtyna Inc. | realtyna.com
+ */
+.wpl_agent_info_l img, .wpl_agent_info_l .no_image{
+  border: none;
+  padding: 0;
+  box-shadow: 0 0 1px rgba($co-0,.1);
+}
+
+.wpl_agent_info_c > ul, ul.wpl_agent_info_r {
+    margin-left: 0 !important;
+    li {
+      float: none;
+      padding-left: 0;
+      font-size: 13px;
+      width: 100%;
+      color: $co-5;
+      font-weight: 400;
+      a {
+        color: $co-5;
+        &:hover {
+          color: $main-color;
+        }
+      }
+
+      &:before {
+        background: transparent !important;
+        width: auto;
+        color: $main-color;
+        position: static;
+        display: inline-block;
+        padding-right: 5px;
+        vertical-align: middle;
+        font: {
+          size: 17px;
+        }
+        @include for-phone {
+          font-size: 14px !important;
+        }
+      }
+      &.tel:before {
+        content: "\e00f" !important;
+      }
+      &.mobile:before {
+        font-family: $font-sesame;
+        content: "\e911";
+      }
+      &.email {
+        img {
+          vertical-align: middle;
+        }
+      }
+      a {
+        @include for-phone {
+          float: none !important;
+          display: inline-block !important;
+        }
+      }
+    }
+}
+.wpl_agent_info {
+  .company, .company_details {
+    display: inline-block;
+    vertical-align: middle;
+    color: $main-color;
+    line-height: normal;
+    background: transparent !important;
+    font: {
+      family: $font-montserrat;
+      weight: bold;
+    }
+  }
+  .company, .company_details .company_name {
+    display:block !important;
+    margin:10px 0 5px 0;
+    padding: 0 !important;
+    &:before {
+      padding-right: 10px;
+      content: url("../img/svg/company_logo.svg");
+      line-height: 12px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+.wpl_profile_show_container{
+  margin-top: 0;
+  .wpl_profile_show_container_box {
+    background: #fafafa;
+    box-shadow: 0 1px 1px rgba($co-0,.1);
+    padding:20px
+  }
+  .wpl_agent_info{
+    float: left;
+    width: 60%;
+    @include for-tablet{
+      width: 100%;
+      float: none;
+    }
+  }
+  .wpl_agent_about
+  {
+    text-align:justify;
+  }
+  .wpl_agent_details{
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 30px;
+    @include for-tablet{
+      padding-bottom: 0;
+    }
+  }
+  .wpl_agent_info_r{
+    background: $co-1;
+    border-radius: 5px;
+    width: auto;
+    min-width: 80%;
+    min-height: 50px;
+    line-height: 50px;
+    text-align: left;
+    padding:10px;
+    margin-top:10px;
+    @include for-tablet{
+      margin: 10px auto;
+    }
+    img{
+      display: inline-block;
+      width: 100px;
+      vertical-align: middle;
+      &+ .company{
+        &:before{
+          display: none;
+        }
+      }
+    }
+    span
+    {
+      font-style: normal;
+      display:block;
+    }
+    .location{
+      line-height: normal;
+      span {
+        width: auto;
+      }
+    }
+  }
+  .wpl_profile_container_title{
+    color: $co-0 !important;
+    font:{
+      family: $font-montserrat;
+      size: 24px;
+      weight: 600;
+    }
+  }
+  .wpl_contact_container{
+    float: left;
+    width: 40%;
+    margin: 0;
+    @include for-tablet{
+      float: none;
+      width: 100%;
+    }
+  }
+  .wpl-review-activity{
+    float: left;
+    width: 100%;
+  }
+}/*End profile show container*/
+
+/*Contact form*/
+.wpl_prp_show_container .wpl-contact-listing-wp,.wpl_user_contact_container{
+  position: relative;
+  .form-field{
+    width: 100%;
+    margin-bottom: 10px;
+    min-height: 0;
+    padding:0;
+    input[type="text"],textarea{
+      border-radius: 3px !important;
+      border:1px solid $co-7;
+      box-shadow: 0 1px 0 $co-7;
+      background: rgba($co-1,.5);
+      color: $co-8;
+      font:{
+        family: $font-montserrat;
+        size: 15px;
+        weight: bold;
+      }
+    }
+    textarea{
+      height: 100px;
+      min-height: 100px;
+      padding: 10px 100px 10px 10px;
+    }
+    input[type="submit"]{
+      float: right;
+      min-width: 75px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border: 1px solid transparent;
+      background: $main-color;
+      &:hover{
+        color: $main-color;
+        border-color: $main-color;
+        background: transparent;
+      }
+    }
+    &.wpl-contact-listing-btn,&.button{
+      position: static;
+      /*top: auto;
+      bottom: 25px;
+      right: 10px;
+      z-index: 3;
+      width: auto;*/
+    }
+  }
+}/*End Contact form*/
